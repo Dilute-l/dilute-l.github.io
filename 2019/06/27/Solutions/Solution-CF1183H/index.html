@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>题解 洛谷P2547 [AHOI2004]DNA变异 | Dilute&#39;s blog</title>
+  <title>题解 CF1183H Subsequences (hard version) | Dilute&#39;s blog</title>
   
   
   <meta name="description" content="有了Hexo博客并不能改变我是个蒟蒻的事实">
@@ -313,14 +313,31 @@
 
   <section class='meta'>
     
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme=""
+    data-mini=true 
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="song"
+    data-id="28941711"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
     
     <div class="meta" id="header-meta">
       
         
   
     <h1 class="title">
-      <a href="/2018/10/23/Solutions/Solution-Luogu2547/">
-        题解 洛谷P2547 [AHOI2004]DNA变异
+      <a href="/2019/06/27/Solutions/Solution-CF1183H/">
+        题解 CF1183H Subsequences (hard version)
       </a>
     </h1>
   
@@ -349,7 +366,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-10-24</p>
+    <p>2019-06-27</p>
   </a>
 </div>
 
@@ -401,20 +418,22 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <p>首先我作为一个蒟蒻，拿到字符串题，首先看看能不能无脑哈希</p>
-<p>然后于是我们就发现了一个绝妙的做法：暴力枚举每个字符串能够转换成的字符串</p>
-<p>于是我们就获得了$O(N * 8^4)$的优秀复杂度</p>
-<p>显然会T飞QwQ</p>
-<p>我们考虑再这个基础上进行优化</p>
+          <h2 id="瞎搞DP"><a href="#瞎搞DP" class="headerlink" title="瞎搞DP"></a>瞎搞DP</h2><p><del>CF出了H没出G 菜的真实</del></p>
+<p>发现$k$从$\texttt{E}$题的$100$变成了$O(10^{12})$，考虑与$k$复杂度无关的做法。</p>
+<p>我们考虑$f_{i, j}$表示以$s_i$开始，<strong>本质不同</strong>的长度为$j$的子序列数量。</p>
 <a id="more"></a>
 
-<p>我们会发现如果我们$O(8^4)$枚举的话，其中有一大部分枚举出来的状态都是重复的</p>
-<p>那么我们思考：这其中有多少个状态是有用的呢</p>
-<p>首先我们假设我们将$s_a, s_b$交换，$s_c, s_d$互换（$a,b,c,d\in [1, 8] $, $a \neq b \neq c \neq d$）同时我们令$a &lt; b $ 且 $c &lt; d$</p>
-<p>那么我们会发现最终只有$C_8^4 * 3$种可能是可行的</p>
-<p>所以我们只需要把这些预处理出来，那么我们在后面枚举的时候只需要在这些状态中取就行了</p>
-<p>最终复杂度$O(N * C_8^4 * 3 * 8)$，（最后的8是Hash的复杂度）佐以优秀的常数便可AC此题。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Sooke bless me.</span></span><br><span class="line"><span class="comment">// LJC00118 bless me.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 2147483647</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Inp</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> Neg = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(c == <span class="string">'-'</span>)</span><br><span class="line">			Neg = <span class="number">-1</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> Sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">		Sum = ((Sum &lt;&lt; <span class="number">3</span>) + (Sum &lt;&lt; <span class="number">1</span>)) + c - <span class="string">'0'</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Neg * Sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> s[<span class="number">10010</span>];</span><br><span class="line"><span class="keyword">bool</span> Used[<span class="number">20</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> cg[<span class="number">10000000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Hash</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> Sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)&#123;</span><br><span class="line">		Sum &lt;&lt;= <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">switch</span>(s[i])&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'A'</span>:&#123;</span><br><span class="line">				Sum += <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'C'</span>:&#123;</span><br><span class="line">				Sum += <span class="number">2</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'T'</span>:&#123;</span><br><span class="line">				Sum += <span class="number">3</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Hsh[<span class="number">10000</span>];</span><br><span class="line"><span class="keyword">int</span> sa[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> sb[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> C_swap;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> n = Inp();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s[i], Hsh[i] = Hash(s[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j1 = <span class="number">0</span>; j1 &lt; <span class="number">8</span>; j1++)&#123;</span><br><span class="line">		Used[j1] = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j2 = j1 + <span class="number">1</span>; j2 &lt; <span class="number">8</span>; j2++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(Used[j2])</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			Used[j2] = <span class="literal">true</span>;</span><br><span class="line">			sa[++C_swap] = j1;</span><br><span class="line">			sb[C_swap] = j2;</span><br><span class="line">			Used[j2] = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		Used[j1] = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> Ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= C_swap; j++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> u = j + <span class="number">1</span>; u &lt;= C_swap; u++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(sa[j] == sa[u] || sb[j] == sb[u] || sa[j] == sb[u] || sb[j] == sa[u])</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				<span class="built_in">string</span> s2 = s[i];</span><br><span class="line">				swap(s2[sa[j]], s2[sb[j]]);</span><br><span class="line">				swap(s2[sa[u]], s2[sb[u]]);</span><br><span class="line">				cg[Hash(s2)] = <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; j++) </span><br><span class="line">			<span class="keyword">if</span>(cg[Hsh[j]])</span><br><span class="line">				Ans++, cg[Hsh[j]] = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, Ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>显然直接转移是错误的，例如下面这种情况就会在计算字符串$\texttt{baa}$的$f_{1, 2}$的时候把$\texttt{ba}$给计算两遍。</p>
+<p>我们考虑如何去掉这些重复算的字符串。</p>
+<p>首先，我们枚举下一个出现的位置$u$，考虑$f_{u, j - 1}$被算重的条件。</p>
+<p>如果存在一个$k$，使得$s_k = s_j$且$i &lt; k &lt; u$，那么我们发现$f_{k, j - 1}$完全包含的$f_{u, j - 1}$，换句话说就是$f_{u, j - 1}$整个算重了。</p>
+<p>也就是说，我们在枚举转移的时候，我们只需要选择$s_u$是在$(l, n]$这段区间内第一次出现的$f_{u, j - 1}$转移即可。</p>
+<p>求出了$f$之后，我们可以得出长度为$len$的本质不同的子序列就是$f[0][len + 1]$。</p>
+<p>我们只需要从高到低枚举$len$，然后贪心的尽量取长的字符串即可。</p>
+<p>最终复杂度$O(n^3)$（其实是可以做到$O(26 n^2)$的，但是过了就行）。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 2147483647</span></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">inp</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c =getchar();</span><br><span class="line">    <span class="keyword">while</span>(c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">        c = getchar();</span><br><span class="line">    ll sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">        sum = sum * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll f[<span class="number">200</span>][<span class="number">200</span>];</span><br><span class="line"><span class="keyword">bool</span> used[<span class="number">30</span>];</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">200</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = inp();</span><br><span class="line">    ll k = inp();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">        f[i][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> len = <span class="number">2</span>; len &lt;= n + <span class="number">1</span>; len++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="built_in">memset</span>(used, <span class="literal">false</span>, <span class="keyword">sizeof</span>(used));</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">                <span class="keyword">if</span>(!used[s[j] - <span class="string">'a'</span>])&#123;</span><br><span class="line">                    used[s[j] - <span class="string">'a'</span>] = <span class="literal">true</span>;</span><br><span class="line">                    f[i][len] += f[j][len - <span class="number">1</span>];</span><br><span class="line">                    f[i][len] = <span class="built_in">std</span>::min(f[i][len], k);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">        ll sum = f[<span class="number">0</span>][i + <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">memset</span>(used, <span class="literal">false</span>, <span class="keyword">sizeof</span>(used));</span><br><span class="line">        <span class="keyword">if</span>(k &gt; sum)&#123;</span><br><span class="line">            k -= sum;</span><br><span class="line">            ans += (n - i) * sum;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ans += (n - i) * k;</span><br><span class="line">            k = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(k &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
         </div>
         
           
@@ -425,10 +444,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-03-02T07:32:20-05:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-06-27T09:38:04+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年3月2日</p>
+    <p>最后更新于 2019年6月27日</p>
   </a>
 </div>
 
@@ -437,7 +456,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/哈希/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>哈希</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/字符串/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>字符串</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DP/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>DP</p></a></div>
 
 
         
@@ -450,11 +469,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://dilute.xyz/2018/10/23/Solutions/Solution-Luogu2547/&title=题解 洛谷P2547 [AHOI2004]DNA变异 | Dilute's blog&summary=首先我作为一个蒟蒻，拿到字符串题，首先看看能不能无脑哈希
-然后于是我们就发现了一个绝妙的做法：暴力枚举每个字符串能够转换成的字符串
-于是我们就获得了$O(N * 8^4)$的优秀复杂度
-显然会T飞QwQ
-我们考虑再这个基础上进行优化"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://dilute.xyz/2019/06/27/Solutions/Solution-CF1183H/&title=题解 CF1183H Subsequences (hard version) | Dilute's blog&summary=瞎搞DPCF出了H没出G 菜的真实
+发现$k$从$\texttt{E}$题的$100$变成了$O(10^{12})$，考虑与$k$复杂度无关的做法。
+我们考虑$f_{i, j}$表示以$s_i$开始，本质不同的长度为$j$的子序列数量。"
           
           >
           
@@ -466,11 +483,9 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dilute.xyz/2018/10/23/Solutions/Solution-Luogu2547/&title=题解 洛谷P2547 [AHOI2004]DNA变异 | Dilute's blog&summary=首先我作为一个蒟蒻，拿到字符串题，首先看看能不能无脑哈希
-然后于是我们就发现了一个绝妙的做法：暴力枚举每个字符串能够转换成的字符串
-于是我们就获得了$O(N * 8^4)$的优秀复杂度
-显然会T飞QwQ
-我们考虑再这个基础上进行优化"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dilute.xyz/2019/06/27/Solutions/Solution-CF1183H/&title=题解 CF1183H Subsequences (hard version) | Dilute's blog&summary=瞎搞DPCF出了H没出G 菜的真实
+发现$k$从$\texttt{E}$题的$100$变成了$O(10^{12})$，考虑与$k$复杂度无关的做法。
+我们考虑$f_{i, j}$表示以$s_i$开始，本质不同的长度为$j$的子序列数量。"
           
           >
           
@@ -482,11 +497,9 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://dilute.xyz/2018/10/23/Solutions/Solution-Luogu2547/&title=题解 洛谷P2547 [AHOI2004]DNA变异 | Dilute's blog&summary=首先我作为一个蒟蒻，拿到字符串题，首先看看能不能无脑哈希
-然后于是我们就发现了一个绝妙的做法：暴力枚举每个字符串能够转换成的字符串
-于是我们就获得了$O(N * 8^4)$的优秀复杂度
-显然会T飞QwQ
-我们考虑再这个基础上进行优化"
+          href="http://service.weibo.com/share/share.php?url=https://dilute.xyz/2019/06/27/Solutions/Solution-CF1183H/&title=题解 CF1183H Subsequences (hard version) | Dilute's blog&summary=瞎搞DPCF出了H没出G 菜的真实
+发现$k$从$\texttt{E}$题的$100$变成了$O(10^{12})$，考虑与$k$复杂度无关的做法。
+我们考虑$f_{i, j}$表示以$s_i$开始，本质不同的长度为$j$的子序列数量。"
           
           >
           
@@ -514,12 +527,17 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2018/11/17/Solutions/Solution-CF1077C/" rel="prev" title="题解 CF1077C Good Array">
+                                <a href="/2019/07/21/Solutions/Solution-CF1178G/" rel="prev" title="题解 CF1178G The Awesomest Vertex">
                                   
-                                      题解 CF1077C Good Array
+                                      题解 CF1178G The Awesomest Vertex
                                   
                                 </a>
                             </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/斜率优化/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>斜率优化</a> <a class="tag" href="/tags/分块/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>分块</a> <a class="tag" href="/tags/DFS序/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>DFS序.</a>
+                                </h6>
                             
                         </span>
                     </section>
@@ -529,16 +547,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2018/10/01/Notes/min-cost-max-flow/" rel="prev" title="算法学习笔记-最小费用最大流">
+                                <a href="/2019/06/03/Solutions/Solution-CF240F/" rel="prev" title="题解 CF240F TorCoder">
                                     
-                                        算法学习笔记-最小费用最大流
+                                        题解 CF240F TorCoder
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/网络流/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>网络流</a> <a class="tag" href="/tags/费用流/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>费用流</a>
+                                    <a class="tag" href="/tags/数据结构/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>数据结构</a> <a class="tag" href="/tags/线段树/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>线段树</a>
                                 </h6>
                             
                         </span>
@@ -577,11 +595,49 @@
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
 
 
   <script>
     window.subData = {
-      title: '题解 洛谷P2547 [AHOI2004]DNA变异',
+      title: '题解 CF1183H Subsequences (hard version)',
       tools: true
     }
   </script>

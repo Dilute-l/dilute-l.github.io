@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>题解 CF1183H Subsequences (hard version) | Dilute&#39;s blog</title>
+  <title>题解 CF15D Map | Dilute&#39;s blog</title>
   
   
   <meta name="description" content="有了Hexo博客并不能改变我是个蒟蒻的事实">
@@ -322,7 +322,7 @@
     data-mode="circulation"
     data-server="netease"
     data-type="song"
-    data-id="28941711"
+    data-id="448596416"
     data-volume="0.7">
   </div>
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
@@ -336,8 +336,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/06/26/Solutions/Solution-CF1183H/">
-        题解 CF1183H Subsequences (hard version)
+      <a href="/2019/05/08/Solutions/Solution-CF15D/">
+        题解 CF15D Map
       </a>
     </h1>
   
@@ -366,7 +366,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-06-27</p>
+    <p>2019-05-08</p>
   </a>
 </div>
 
@@ -418,20 +418,21 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h2 id="瞎搞DP"><a href="#瞎搞DP" class="headerlink" title="瞎搞DP"></a>瞎搞DP</h2><p><del>CF出了H没出G 菜的真实</del></p>
-<p>发现$k$从$\texttt{E}$题的$100$变成了$O(10^{12})$，考虑与$k$复杂度无关的做法。</p>
-<p>我们考虑$f_{i, j}$表示以$s_i$开始，<strong>本质不同</strong>的长度为$j$的子序列数量。</p>
+          <h2 id="set-瞎搞"><a href="#set-瞎搞" class="headerlink" title="$set$瞎搞"></a>$set$瞎搞</h2><p>首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。</p>
+<p>我们首先考虑如何求出$f[i][j]$。</p>
 <a id="more"></a>
 
-<p>显然直接转移是错误的，例如下面这种情况就会在计算字符串$\texttt{baa}$的$f_{1, 2}$的时候把$\texttt{ba}$给计算两遍。</p>
-<p>我们考虑如何去掉这些重复算的字符串。</p>
-<p>首先，我们枚举下一个出现的位置$u$，考虑$f_{u, j - 1}$被算重的条件。</p>
-<p>如果存在一个$k$，使得$s_k = s_j$且$i &lt; k &lt; u$，那么我们发现$f_{k, j - 1}$完全包含的$f_{u, j - 1}$，换句话说就是$f_{u, j - 1}$整个算重了。</p>
-<p>也就是说，我们在枚举转移的时候，我们只需要选择$s_u$是在$(l, n]$这段区间内第一次出现的$f_{u, j - 1}$转移即可。</p>
-<p>求出了$f$之后，我们可以得出长度为$len$的本质不同的子序列就是$f[0][len + 1]$。</p>
-<p>我们只需要从高到低枚举$len$，然后贪心的尽量取长的字符串即可。</p>
-<p>最终复杂度$O(n^3)$（其实是可以做到$O(26 n^2)$的，但是过了就行）。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 2147483647</span></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">inp</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c =getchar();</span><br><span class="line">    <span class="keyword">while</span>(c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">        c = getchar();</span><br><span class="line">    ll sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">        sum = sum * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll f[<span class="number">200</span>][<span class="number">200</span>];</span><br><span class="line"><span class="keyword">bool</span> used[<span class="number">30</span>];</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">200</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = inp();</span><br><span class="line">    ll k = inp();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">        f[i][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> len = <span class="number">2</span>; len &lt;= n + <span class="number">1</span>; len++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="built_in">memset</span>(used, <span class="literal">false</span>, <span class="keyword">sizeof</span>(used));</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">                <span class="keyword">if</span>(!used[s[j] - <span class="string">'a'</span>])&#123;</span><br><span class="line">                    used[s[j] - <span class="string">'a'</span>] = <span class="literal">true</span>;</span><br><span class="line">                    f[i][len] += f[j][len - <span class="number">1</span>];</span><br><span class="line">                    f[i][len] = <span class="built_in">std</span>::min(f[i][len], k);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">        ll sum = f[<span class="number">0</span>][i + <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">memset</span>(used, <span class="literal">false</span>, <span class="keyword">sizeof</span>(used));</span><br><span class="line">        <span class="keyword">if</span>(k &gt; sum)&#123;</span><br><span class="line">            k -= sum;</span><br><span class="line">            ans += (n - i) * sum;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ans += (n - i) * k;</span><br><span class="line">            k = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(k &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>前面的求和可以一个二维前缀和简单解决，关键在于后面的$\min​$。</p>
+<p>我们对每行都建一个$st​$表，考虑我们把当前我们要求的区间里的$h[i][j]​$都丢进一个$set​$中。</p>
+<p>我们考虑每次把矩形往下移动。</p>
+<p>发现其实对于每一行，只有它的在范围内的最小值才有贡献，所$set$中只需要放每行的最小值（可以用$st$表快速查询）。</p>
+<p>我们再考虑如下图所示。</p>
+<p><img src="https://dilute.xyz/images/3.png" alt></p>
+<p>然后如果我们要从蓝色矩形移动到黑色矩形，那么我们只需要在$set$中删去灰色部分的最小值，再加入浅蓝色部分的最小值即可。</p>
+<p>求出了$f[i][j]$之后就可以按题意模拟了w</p>
+<p>每次我们可以找出$f[i][j]$的最小值，这个排遍序轻松解决（<del>我之前作死用set被卡常了</del>）然后给所有因为这个矩形被取到了导致不能取的打上标记，这样子时间复杂度是正确的，最多只会被取到$\frac{n m}{ab}$个矩形，然后每次打标记是$O(a * b)$的，最后复杂度就是$O(\frac{n m}{a b} a b) = O(n m)$的。</p>
+<p>复杂度$O(n m \log n)$，轻微卡常w</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 2147483647</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">inp</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span>(c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">        c = getchar();</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">        sum = sum * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> f[<span class="number">1010</span>][<span class="number">1010</span>][<span class="number">12</span>];</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">multiset</span>&lt;ll&gt; s2;</span><br><span class="line"><span class="keyword">int</span> ans1[<span class="number">1000010</span>], ans2[<span class="number">1000010</span>], h[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line">ll ans3[<span class="number">1000010</span>], sum[<span class="number">1010</span>][<span class="number">1010</span>], val[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">bool</span> used[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="built_in">std</span>::pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; s[<span class="number">1000010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lg = log2(r - l + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">std</span>::min(f[x][l][lg], f[x][r - (<span class="number">1</span> &lt;&lt; lg) + <span class="number">1</span>][lg]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="built_in">std</span>::pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; a, <span class="built_in">std</span>::pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(val[a.first][a.second] == val[b.first][b.second])</span><br><span class="line">        <span class="keyword">return</span> a &lt; b;</span><br><span class="line">    <span class="keyword">return</span> val[a.first][a.second] &lt; val[b.first][b.second];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = inp();</span><br><span class="line">    <span class="keyword">int</span> m = inp();</span><br><span class="line">    <span class="keyword">int</span> a = inp();</span><br><span class="line">    <span class="keyword">int</span> b = inp();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            f[i][j][<span class="number">0</span>] = h[i][j] = inp();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> u = <span class="number">1</span>; u &lt;= <span class="number">10</span>; u++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">                <span class="keyword">if</span>(j + (<span class="number">1</span> &lt;&lt; u) - <span class="number">1</span> &lt;= m)</span><br><span class="line">                    f[i][j][u] = <span class="built_in">std</span>::min(f[i][j][u - <span class="number">1</span>], f[i][j + (<span class="number">1</span> &lt;&lt; (u - <span class="number">1</span>))][u - <span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            sum[i][j] = sum[i - <span class="number">1</span>][j] + sum[i][j - <span class="number">1</span>] - sum[i - <span class="number">1</span>][j - <span class="number">1</span>] + h[i][j];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m - b + <span class="number">1</span>; j++)&#123;</span><br><span class="line">        s2.clear();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= a; i++)</span><br><span class="line">            s2.insert(query(i, j, j + b - <span class="number">1</span>));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - a + <span class="number">1</span>; i++)&#123;</span><br><span class="line">            val[i][j] = sum[i + a - <span class="number">1</span>][j + b - <span class="number">1</span>] + sum[i - <span class="number">1</span>][j - <span class="number">1</span>] - sum[i + a - <span class="number">1</span>][j - <span class="number">1</span>] - sum[i - <span class="number">1</span>][j + b - <span class="number">1</span>] - (*(s2.begin())) * (a * b);</span><br><span class="line">            s2.erase(s2.find(query(i, j, j + b - <span class="number">1</span>)));</span><br><span class="line">            <span class="keyword">if</span>(i + a &lt;= n)</span><br><span class="line">                s2.insert(query(i + a, j, j + b - <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> cc = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - a + <span class="number">1</span>; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m - b + <span class="number">1</span>; j++)</span><br><span class="line">            s[++cc] = <span class="built_in">std</span>::make_pair(i, j);</span><br><span class="line">    <span class="built_in">std</span>::sort(s + <span class="number">1</span>, s + cc + <span class="number">1</span>, cmp);</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> u = <span class="number">1</span>; u &lt;= cc; u++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(used[s[u].first][s[u].second])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        cnt++;</span><br><span class="line">        ans1[cnt] = s[u].first;</span><br><span class="line">        ans2[cnt] = s[u].second;</span><br><span class="line">        ans3[cnt] = val[s[u].first][s[u].second];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = ans1[cnt] - a + <span class="number">1</span>; i &lt;= ans1[cnt] + a - <span class="number">1</span>; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = ans2[cnt] - b + <span class="number">1</span>; j &lt;= ans2[cnt] + b - <span class="number">1</span>; j++)</span><br><span class="line">                <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; j &gt; <span class="number">0</span> &amp;&amp; !used[i][j] &amp;&amp; i &lt;= n - a + <span class="number">1</span> &amp;&amp; j &lt;= m - b + <span class="number">1</span>)</span><br><span class="line">                    used[i][j] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, cnt);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d %I64d\n"</span>, ans1[i], ans2[i], ans3[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
         </div>
@@ -444,10 +445,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-06-26T21:38:04-04:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-05-08T12:25:46+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年6月27日</p>
+    <p>最后更新于 2019年5月8日</p>
   </a>
 </div>
 
@@ -456,7 +457,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DP/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>DP</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/数据结构/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>数据结构</p></a></div>
 
 
         
@@ -469,9 +470,8 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://dilute.xyz/2019/06/26/Solutions/Solution-CF1183H/&title=题解 CF1183H Subsequences (hard version) | Dilute's blog&summary=瞎搞DPCF出了H没出G 菜的真实
-发现$k$从$\texttt{E}$题的$100$变成了$O(10^{12})$，考虑与$k$复杂度无关的做法。
-我们考虑$f_{i, j}$表示以$s_i$开始，本质不同的长度为$j$的子序列数量。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://dilute.xyz/2019/05/08/Solutions/Solution-CF15D/&title=题解 CF15D Map | Dilute's blog&summary=$set$瞎搞首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。
+我们首先考虑如何求出$f[i][j]$。"
           
           >
           
@@ -483,9 +483,8 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dilute.xyz/2019/06/26/Solutions/Solution-CF1183H/&title=题解 CF1183H Subsequences (hard version) | Dilute's blog&summary=瞎搞DPCF出了H没出G 菜的真实
-发现$k$从$\texttt{E}$题的$100$变成了$O(10^{12})$，考虑与$k$复杂度无关的做法。
-我们考虑$f_{i, j}$表示以$s_i$开始，本质不同的长度为$j$的子序列数量。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dilute.xyz/2019/05/08/Solutions/Solution-CF15D/&title=题解 CF15D Map | Dilute's blog&summary=$set$瞎搞首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。
+我们首先考虑如何求出$f[i][j]$。"
           
           >
           
@@ -497,9 +496,8 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://dilute.xyz/2019/06/26/Solutions/Solution-CF1183H/&title=题解 CF1183H Subsequences (hard version) | Dilute's blog&summary=瞎搞DPCF出了H没出G 菜的真实
-发现$k$从$\texttt{E}$题的$100$变成了$O(10^{12})$，考虑与$k$复杂度无关的做法。
-我们考虑$f_{i, j}$表示以$s_i$开始，本质不同的长度为$j$的子序列数量。"
+          href="http://service.weibo.com/share/share.php?url=https://dilute.xyz/2019/05/08/Solutions/Solution-CF15D/&title=题解 CF15D Map | Dilute's blog&summary=$set$瞎搞首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。
+我们首先考虑如何求出$f[i][j]$。"
           
           >
           
@@ -527,16 +525,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2019/07/21/Solutions/Solution-CF1178G/" rel="prev" title="题解 CF1178G The Awesomest Vertex">
+                                <a href="/2019/05/28/Solutions/Solution-CF1051E/" rel="prev" title="题解 CF1051E Vasya and Big Integers">
                                   
-                                      题解 CF1178G The Awesomest Vertex
+                                      题解 CF1051E Vasya and Big Integers
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/斜率优化/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>斜率优化</a> <a class="tag" href="/tags/分块/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>分块</a> <a class="tag" href="/tags/DFS序/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>DFS序.</a>
+                                    <a class="tag" href="/tags/DP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>DP</a> <a class="tag" href="/tags/哈希/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>哈希</a> <a class="tag" href="/tags/二分/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>二分</a>
                                 </h6>
                             
                         </span>
@@ -547,16 +545,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2019/06/03/Solutions/Solution-CF240F/" rel="prev" title="题解 CF240F TorCoder">
+                                <a href="/2019/04/27/Other/ZJOI2019-Journey/" rel="prev" title="ZJOI2019 游记">
                                     
-                                        题解 CF240F TorCoder
+                                        ZJOI2019 游记
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/数据结构/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>数据结构</a> <a class="tag" href="/tags/线段树/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>线段树</a>
+                                    <a class="tag" href="/tags/瞎写/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>瞎写</a>
                                 </h6>
                             
                         </span>
@@ -637,7 +635,7 @@
 
   <script>
     window.subData = {
-      title: '题解 CF1183H Subsequences (hard version)',
+      title: '题解 CF15D Map',
       tools: true
     }
   </script>

@@ -414,7 +414,23 @@
 <p>然后心血来潮准备自己也弄个这个东西</p>
 <a id="more"></a>
 
-<h2 id="2019-9-17"><a href="#2019-9-17" class="headerlink" title="2019.9.17"></a>2019.9.17</h2><h4 id="CodeForces-1209E2"><a href="#CodeForces-1209E2" class="headerlink" title="CodeForces 1209E2"></a><a href="http://codeforces.com/problemset/problem/1209/E" target="_blank" rel="noopener">CodeForces 1209E2</a></h4><p>不美好的回忆…</p>
+<h2 id="2019-9-23"><a href="#2019-9-23" class="headerlink" title="2019.9.23"></a>2019.9.23</h2><h4 id="Codeforces-555E"><a href="#Codeforces-555E" class="headerlink" title="Codeforces 555E"></a><a href="http://codeforces.com/problemset/problem/555/E" target="_blank" rel="noopener">Codeforces 555E</a></h4><p>将原图中所有边双都拎出来，这些是可以做到强连通的。</p>
+<p>拎出来之后就是树了，一条路径上一半设为向上另一半向下，判断有无矛盾即可。</p>
+<h2 id="2019-9-22"><a href="#2019-9-22" class="headerlink" title="2019.9.22"></a>2019.9.22</h2><h4 id="Codeforces-1221F"><a href="#Codeforces-1221F" class="headerlink" title="Codeforces 1221F"></a><a href="http://codeforces.com/problemset/problem/1221/F" target="_blank" rel="noopener">Codeforces 1221F</a></h4><p>枚举矩形右端点，将左端点的每一个可能取值用线段树维护一下即可。</p>
+<h4 id="Luogu4768-NOI2018-归程"><a href="#Luogu4768-NOI2018-归程" class="headerlink" title="Luogu4768 [NOI2018]归程"></a><a href="https://www.luogu.com.cn/problem/P4768" target="_blank" rel="noopener">Luogu4768 [NOI2018]归程</a></h4><p>$\text{Kruscal}$重构树…</p>
+<p>跑出$1$到每个点的最段路之后就可以搞了。</p>
+<h4 id="Luogu4197-Peaks"><a href="#Luogu4197-Peaks" class="headerlink" title="Luogu4197 Peaks"></a><a href="https://www.luogu.com.cn/problem/P4197" target="_blank" rel="noopener">Luogu4197 Peaks</a></h4><p>还是$\text{Kruscal}$重构树……</p>
+<p>把询问最小值改成第$k$大即可。</p>
+<h2 id="2019-9-21"><a href="#2019-9-21" class="headerlink" title="2019.9.21"></a>2019.9.21</h2><h4 id="CometOJ-11-D"><a href="#CometOJ-11-D" class="headerlink" title="CometOJ #11 D"></a><a href="https://cometoj.com/contest/67/problem/D?problem_id=3801" target="_blank" rel="noopener">CometOJ #11 D</a></h4><p>$\text{Kruscal}$重构树。</p>
+<p>询问的是整一棵重构树上的子树的积。</p>
+<p>但是因为$0$的存在，不能树状数组，必须线段树。</p>
+<p>比赛的时候写了个$O(n \sqrt n \log n)$的莫队结果过不去。</p>
+<p>最后半个小时的时候改写正解喜提$\text{rush}$失败，心情极差。</p>
+<h2 id="2019-9-19"><a href="#2019-9-19" class="headerlink" title="2019.9.19"></a>2019.9.19</h2><h4 id="Codeforces-555D"><a href="#Codeforces-555D" class="headerlink" title="Codeforces 555D"></a><a href="http://codeforces.com/problemset/problem/555/D" target="_blank" rel="noopener">Codeforces 555D</a></h4><p>每次二分当前这玩意儿可以掼到哪里，注意加一个如果两次掼回去的话可以直接取模，这样每次至少减少一半就是$O(n \log^2 n)$的了。</p>
+<h2 id="2019-9-18"><a href="#2019-9-18" class="headerlink" title="2019.9.18"></a>2019.9.18</h2><h4 id="Codeforces-1209F"><a href="#Codeforces-1209F" class="headerlink" title="Codeforces 1209F"></a><a href="http://codeforces.com/problemset/problem/1209/F" target="_blank" rel="noopener">Codeforces 1209F</a></h4><p>不美好的回忆$\times 2$…</p>
+<p>虽然我打的很臭但是这场的题还是蛮有意思的…</p>
+<p>先拆点，然后建出最短路$\text{DAG}$之后分层贪心取，细节很多…</p>
+<h2 id="2019-9-17"><a href="#2019-9-17" class="headerlink" title="2019.9.17"></a>2019.9.17</h2><h4 id="Codeforces-1209E2"><a href="#Codeforces-1209E2" class="headerlink" title="Codeforces 1209E2"></a><a href="http://codeforces.com/problemset/problem/1209/E" target="_blank" rel="noopener">Codeforces 1209E2</a></h4><p>不美好的回忆…</p>
 <p>E1的基础之上（$f[i][j]$表示枚举到第$i$列，状态为$j$的行的最大值已经被确定）状压之后记录一下对于当前列，每个状态可以达到的最大和优化DP，并且注意只取$max$值最大的$n$列。</p>
 <h2 id="2019-9-16"><a href="#2019-9-16" class="headerlink" title="2019.9.16"></a>2019.9.16</h2><h4 id="Codeforces-1215F"><a href="#Codeforces-1215F" class="headerlink" title="Codeforces 1215F"></a><a href="http://codeforces.com/problemset/problem/1215/F" target="_blank" rel="noopener">Codeforces 1215F</a></h4><p>前一天CF的F题。</p>
 <p>建出$M$个点，代表$f \le i$是否成立，建图十分神仙，最后$2-SAT$即可。</p>
@@ -591,10 +607,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-17T22:16:17+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-23T20:53:54+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年9月17日</p>
+    <p>最后更新于 2019年9月23日</p>
   </a>
 </div>
 

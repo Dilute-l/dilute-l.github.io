@@ -414,7 +414,19 @@
 <p>然后心血来潮准备自己也弄个这个东西</p>
 <a id="more"></a>
 
-<h2 id="2019-10-8"><a href="#2019-10-8" class="headerlink" title="2019.10.8"></a>2019.10.8</h2><h4 id="CodeForces-573E"><a href="#CodeForces-573E" class="headerlink" title="CodeForces 573E"></a><a href="http://codeforces.com/problemset/problem/573/E" target="_blank" rel="noopener">CodeForces 573E</a></h4><p>发现肯定存在一个分界点，左边不取，右边去，然后就可以平衡树维护了。严格证明在<a href="https://www.luogu.org/blog/Mrsrz/solution-cf573e" target="_blank" rel="noopener">这篇题解</a>里有。</p>
+<h2 id="2019-11-3"><a href="#2019-11-3" class="headerlink" title="2019.11.3"></a>2019.11.3</h2><h4 id="Codeforces-557I"><a href="#Codeforces-557I" class="headerlink" title="Codeforces 557I"></a><a href="https://codeforces.com/contest/575/problem/I" target="_blank" rel="noopener">Codeforces 557I</a></h4><p>发现 BIT 可以实现平行四边形修改（把坐标系扭转一下，也就是把 $(x ,,y)$ 映射到 $(x ,, x + y)$），考虑在超过边界的时候平行四边形可以被认为是一个直角梯形。直角梯形加，矩形减，用二维 BIT 维护，就能达到三角形加的效果。</p>
+<h2 id="2019-11-2"><a href="#2019-11-2" class="headerlink" title="2019.11.2"></a>2019.11.2</h2><h4 id="Codeforces-997E"><a href="#Codeforces-997E" class="headerlink" title="Codeforces 997E"></a><a href="https://codeforces.com/contest/997/problem/E" target="_blank" rel="noopener">Codeforces 997E</a></h4><p>考虑题目中要求的子串满足 $\max - \min = r - l$，把询问离线下来，枚举右端点，维护 $(\max - \min) - (r - l)= 0$ 的个数，本质就是维护最小值出现次数，注意打标记实现前缀和统计。</p>
+<h2 id="2019-11-1"><a href="#2019-11-1" class="headerlink" title="2019.11.1"></a>2019.11.1</h2><h4 id="Codeforces-585E"><a href="#Codeforces-585E" class="headerlink" title="Codeforces 585E"></a><a href="https://codeforces.com/contest/585/problem/E" target="_blank" rel="noopener">Codeforces 585E</a></h4><p>枚举前一半数的 $\gcd$ ，那么先算前一半数必须要在 $\gcd$ 的倍数中取，后面的数不在 $\gcd$ 的倍数中取的方案数，然后容斥，发现容斥系数正好是 $\mu$ ，证明可以感性理解（捂脸）。</p>
+<h2 id="2019-10-31"><a href="#2019-10-31" class="headerlink" title="2019.10.31"></a>2019.10.31</h2><h4 id="Codeforces-587D"><a href="#Codeforces-587D" class="headerlink" title="Codeforces 587D"></a><a href="https://codeforces.com/contest/587/problem/D" target="_blank" rel="noopener">Codeforces 587D</a></h4><p>前来膜拜一波神仙学长 txc 的集训队作业。</p>
+<p>对于每个点，如果连着他的一条边被割了，那么与之相连的其他边都不能被割。</p>
+<p>对于每个点连着的边的每种颜色，如果其中一条边没有被割，其他边都必须被割。</p>
+<p>二分 + 前后缀和优化建图 + 2-SAT 即可。</p>
+<h2 id="2019-10-21"><a href="#2019-10-21" class="headerlink" title="2019.10.21"></a>2019.10.21</h2><h4 id="Codeforces-576D"><a href="#Codeforces-576D" class="headerlink" title="Codeforces 576D"></a><a href="https://codeforces.com/contest/576/problem/D" target="_blank" rel="noopener">Codeforces 576D</a></h4><p>对于每个存在某个航班从不可用到可用的分界点专门拿出来考虑。</p>
+<p>中间可以用 floyd + 矩阵乘法 维护每个点可不可以在这个时刻到达，可以用bitset优化。</p>
+<p>对于每个分界点跑一遍多源最短路即可。</p>
+<h2 id="2019-10-20"><a href="#2019-10-20" class="headerlink" title="2019.10.20"></a>2019.10.20</h2><h4 id="Codeforces-1239C"><a href="#Codeforces-1239C" class="headerlink" title="Codeforces 1239C"></a><a href="https://codeforces.com/contest/1239/problem/C" target="_blank" rel="noopener">Codeforces 1239C</a></h4><p>使用一个堆维护下一个发生的事件即可。</p>
+<h2 id="2019-10-12"><a href="#2019-10-12" class="headerlink" title="2019.10.12"></a>2019.10.12</h2><h4 id="Codeforces-954I"><a href="#Codeforces-954I" class="headerlink" title="Codeforces 954I"></a><a href="https://codeforces.com/contest/954/problem/I" target="_blank" rel="noopener">Codeforces 954I</a></h4><p>$\Theta(6^2)$ 的枚举两个字符，然后发现如果在这个子串中存在 $s[i] \neq t[i]$ 则表示有必要把 $s[i]$ 和 $t[i]$ 两种字符合并，存不存在可以写成卷积性质然后 FFT / NTT 解决，后半部分可以并查集。</p>
+<h2 id="2019-10-8"><a href="#2019-10-8" class="headerlink" title="2019.10.8"></a>2019.10.8</h2><h4 id="Codeforces-573E"><a href="#Codeforces-573E" class="headerlink" title="Codeforces 573E"></a><a href="http://codeforces.com/problemset/problem/573/E" target="_blank" rel="noopener">Codeforces 573E</a></h4><p>发现肯定存在一个分界点，左边不取，右边去，然后就可以平衡树维护了。严格证明在<a href="https://www.luogu.org/blog/Mrsrz/solution-cf573e" target="_blank" rel="noopener">这篇题解</a>里有。</p>
 <h2 id="2019-10-3"><a href="#2019-10-3" class="headerlink" title="2019.10.3"></a>2019.10.3</h2><h4 id="Codeforces-1172D"><a href="#Codeforces-1172D" class="headerlink" title="Codeforces 1172D"></a><a href="http://codeforces.com/problemset/problem/1172/D" target="_blank" rel="noopener">Codeforces 1172D</a></h4><p>$\color{black}{\text{S}}\color{red}{\text{ooke}}$ 跟我讨论怎么出题。</p>
 <p>结果 $\color{black}{\text{S}}\color{red}{\text{ooke}}$ 一句「你做过Portals没」就把话题变成了Portals做法讨论了……</p>
 <p>在 $(x,1)$ 和 $(y,1)$ 放一对传送门，满足 $r[x] = 1, r[y] = 1$，这样子 $x$ 和 $y$ 一行一列就解决了，然后递归即可。</p>
@@ -615,10 +627,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-10T07:29:01+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-03T22:54:28+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年10月10日</p>
+    <p>最后更新于 2019年11月3日</p>
   </a>
 </div>
 

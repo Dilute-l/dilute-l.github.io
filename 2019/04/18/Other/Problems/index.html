@@ -414,7 +414,7 @@
 <p>然后心血来潮准备自己也弄个这个东西</p>
 <a id="more"></a>
 
-<h2 id="2019-11-3"><a href="#2019-11-3" class="headerlink" title="2019.11.3"></a>2019.11.3</h2><h4 id="Codeforces-557I"><a href="#Codeforces-557I" class="headerlink" title="Codeforces 557I"></a><a href="https://codeforces.com/contest/575/problem/I" target="_blank" rel="noopener">Codeforces 557I</a></h4><p>发现 BIT 可以实现平行四边形修改（把坐标系扭转一下，也就是把 $(x ,y)$ 映射到 $(x - y , x + y)$），考虑在超过边界的时候平行四边形可以被认为是一个直角梯形。直角梯形加，矩形减，用二维 BIT 维护，就能达到三角形加的效果。</p>
+<h2 id="2019-11-3"><a href="#2019-11-3" class="headerlink" title="2019.11.3"></a>2019.11.3</h2><h4 id="Codeforces-557I"><a href="#Codeforces-557I" class="headerlink" title="Codeforces 557I"></a><a href="https://codeforces.com/contest/575/problem/I" target="_blank" rel="noopener">Codeforces 557I</a></h4><p>发现 BIT 可以实现平行四边形修改（把坐标系扭转一下，也就是把 $(x ,y)$ 映射到 $(x , x + y)$），考虑在超过边界的时候平行四边形可以被认为是一个直角梯形。直角梯形加，矩形减，用二维 BIT 维护，就能达到三角形加的效果。</p>
 <h2 id="2019-11-2"><a href="#2019-11-2" class="headerlink" title="2019.11.2"></a>2019.11.2</h2><h4 id="Codeforces-997E"><a href="#Codeforces-997E" class="headerlink" title="Codeforces 997E"></a><a href="https://codeforces.com/contest/997/problem/E" target="_blank" rel="noopener">Codeforces 997E</a></h4><p>考虑题目中要求的子串满足 $\max - \min = r - l$，把询问离线下来，枚举右端点，维护 $(\max - \min) - (r - l)= 0$ 的个数，本质就是维护最小值出现次数，注意打标记实现前缀和统计。</p>
 <h2 id="2019-11-1"><a href="#2019-11-1" class="headerlink" title="2019.11.1"></a>2019.11.1</h2><h4 id="Codeforces-585E"><a href="#Codeforces-585E" class="headerlink" title="Codeforces 585E"></a><a href="https://codeforces.com/contest/585/problem/E" target="_blank" rel="noopener">Codeforces 585E</a></h4><p>枚举前一半数的 $\gcd$ ，那么先算前一半数必须要在 $\gcd$ 的倍数中取，后面的数不在 $\gcd$ 的倍数中取的方案数，然后容斥，发现容斥系数正好是 $\mu$ ，证明可以感性理解（捂脸）。</p>
 <h2 id="2019-10-31"><a href="#2019-10-31" class="headerlink" title="2019.10.31"></a>2019.10.31</h2><h4 id="Codeforces-587D"><a href="#Codeforces-587D" class="headerlink" title="Codeforces 587D"></a><a href="https://codeforces.com/contest/587/problem/D" target="_blank" rel="noopener">Codeforces 587D</a></h4><p>前来膜拜一波神仙学长 txc 的集训队作业。</p>
@@ -627,7 +627,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-06T14:07:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-06T14:11:33+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>最后更新于 2019年11月6日</p>

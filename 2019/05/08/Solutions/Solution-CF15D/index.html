@@ -418,12 +418,12 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h2 id="set-瞎搞"><a href="#set-瞎搞" class="headerlink" title="$set$瞎搞"></a>$set$瞎搞</h2><p>首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。</p>
+          <h2 id="set-瞎搞"><a href="#set-瞎搞" class="headerlink" title="$set$ 瞎搞"></a>$set$ 瞎搞</h2><p>首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。</p>
 <p>我们首先考虑如何求出$f[i][j]$。</p>
 <a id="more"></a>
 
-<p>前面的求和可以一个二维前缀和简单解决，关键在于后面的$\min​$。</p>
-<p>我们对每行都建一个$st​$表，考虑我们把当前我们要求的区间里的$h[i][j]​$都丢进一个$set​$中。</p>
+<p>前面的求和可以一个二维前缀和简单解决，关键在于后面的$\min$。</p>
+<p>我们对每行都建一个$st$表，考虑我们把当前我们要求的区间里的$h[i][j]$都丢进一个$set$中。</p>
 <p>我们考虑每次把矩形往下移动。</p>
 <p>发现其实对于每一行，只有它的在范围内的最小值才有贡献，所$set$中只需要放每行的最小值（可以用$st$表快速查询）。</p>
 <p>我们再考虑如下图所示。</p>
@@ -445,10 +445,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-05-08T12:25:46+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-13T14:00:03+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年5月8日</p>
+    <p>最后更新于 2020年2月13日</p>
   </a>
 </div>
 
@@ -470,7 +470,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://dilute.xyz/2019/05/08/Solutions/Solution-CF15D/&title=题解 CF15D Map | Dilute's blog&summary=$set$瞎搞首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://dilute.xyz/2019/05/08/Solutions/Solution-CF15D/&title=题解 CF15D Map | Dilute's blog&summary=$set$ 瞎搞首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。
 我们首先考虑如何求出$f[i][j]$。"
           
           >
@@ -483,7 +483,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dilute.xyz/2019/05/08/Solutions/Solution-CF15D/&title=题解 CF15D Map | Dilute's blog&summary=$set$瞎搞首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dilute.xyz/2019/05/08/Solutions/Solution-CF15D/&title=题解 CF15D Map | Dilute's blog&summary=$set$ 瞎搞首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。
 我们首先考虑如何求出$f[i][j]$。"
           
           >
@@ -496,7 +496,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://dilute.xyz/2019/05/08/Solutions/Solution-CF15D/&title=题解 CF15D Map | Dilute's blog&summary=$set$瞎搞首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。
+          href="http://service.weibo.com/share/share.php?url=https://dilute.xyz/2019/05/08/Solutions/Solution-CF15D/&title=题解 CF15D Map | Dilute's blog&summary=$set$ 瞎搞首先非常显然，一个矩形$(x1, y1, x2, y2)$的代价就是$\displaystyle\sum_{i = x1}^{x2}\sum_{j = y1}^{y2} h[i][j] - \min_{x1 \le i \le x2, y1 \le j \le y2} h[i][j]$，我们用$f[i][j]$表示以$(i, j)$为左上角的矩形的代价。即矩形$(i, j, i + a - 1, j + b - 1)$的代价。
 我们首先考虑如何求出$f[i][j]$。"
           
           >
@@ -747,7 +747,7 @@
         
           <li><a class="flat-box" title="/categories/游记/" href="/categories/游记/"><div class='name'>游记</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/题解/" href="/categories/题解/"><div class='name'>题解</div><div class='badge'>(27)</div></a></li>
+          <li><a class="flat-box" title="/categories/题解/" href="/categories/题解/"><div class='name'>题解</div><div class='badge'>(28)</div></a></li>
         
       </ul>
     </div>
@@ -769,7 +769,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/DFS序/" style="font-size: 14px; color: #999">DFS序</a> <a href="/tags/DFS序/" style="font-size: 14px; color: #999">DFS序.</a> <a href="/tags/DP/" style="font-size: 24px; color: #555">DP</a> <a href="/tags/NTT/" style="font-size: 14px; color: #999">NTT</a> <a href="/tags/STL/" style="font-size: 15.67px; color: #8e8e8e">STL</a> <a href="/tags/Tarjan/" style="font-size: 14px; color: #999">Tarjan</a> <a href="/tags/二分/" style="font-size: 15.67px; color: #8e8e8e">二分</a> <a href="/tags/二分答案/" style="font-size: 14px; color: #999">二分答案</a> <a href="/tags/倍增/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/分块/" style="font-size: 14px; color: #999">分块</a> <a href="/tags/单调队列/" style="font-size: 14px; color: #999">单调队列</a> <a href="/tags/哈希/" style="font-size: 20.67px; color: #6c6c6c">哈希</a> <a href="/tags/图论/" style="font-size: 14px; color: #999">图论</a> <a href="/tags/多项式/" style="font-size: 14px; color: #999">多项式</a> <a href="/tags/字符串/" style="font-size: 17.33px; color: #828282">字符串</a> <a href="/tags/平衡树/" style="font-size: 14px; color: #999">平衡树</a> <a href="/tags/并查集/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/拓扑/" style="font-size: 14px; color: #999">拓扑</a> <a href="/tags/数据结构/" style="font-size: 22.33px; color: #606060">数据结构</a> <a href="/tags/数论，数学/" style="font-size: 15.67px; color: #8e8e8e">数论，数学</a> <a href="/tags/斜率优化/" style="font-size: 14px; color: #999">斜率优化</a> <a href="/tags/构造/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/树上差分/" style="font-size: 14px; color: #999">树上差分</a> <a href="/tags/模拟/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/模拟退火/" style="font-size: 14px; color: #999">模拟退火</a> <a href="/tags/游记/" style="font-size: 14px; color: #999">游记</a> <a href="/tags/瞎写/" style="font-size: 17.33px; color: #828282">瞎写</a> <a href="/tags/矩阵乘法/" style="font-size: 14px; color: #999">矩阵乘法</a> <a href="/tags/线段树/" style="font-size: 19px; color: #777">线段树</a> <a href="/tags/缩点/" style="font-size: 14px; color: #999">缩点</a> <a href="/tags/网络流/" style="font-size: 15.67px; color: #8e8e8e">网络流</a> <a href="/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/费用流/" style="font-size: 15.67px; color: #8e8e8e">费用流</a> <a href="/tags/非传统题/" style="font-size: 15.67px; color: #8e8e8e">非传统题</a> <a href="/tags/骗分/" style="font-size: 17.33px; color: #828282">骗分</a>
+      <a href="/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/DFS序/" style="font-size: 14px; color: #999">DFS序</a> <a href="/tags/DFS序/" style="font-size: 14px; color: #999">DFS序.</a> <a href="/tags/DP/" style="font-size: 24px; color: #555">DP</a> <a href="/tags/NTT/" style="font-size: 14px; color: #999">NTT</a> <a href="/tags/STL/" style="font-size: 15.67px; color: #8e8e8e">STL</a> <a href="/tags/Tarjan/" style="font-size: 14px; color: #999">Tarjan</a> <a href="/tags/二分/" style="font-size: 15.67px; color: #8e8e8e">二分</a> <a href="/tags/二分答案/" style="font-size: 14px; color: #999">二分答案</a> <a href="/tags/倍增/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/分块/" style="font-size: 14px; color: #999">分块</a> <a href="/tags/单调队列/" style="font-size: 14px; color: #999">单调队列</a> <a href="/tags/哈希/" style="font-size: 20.67px; color: #6c6c6c">哈希</a> <a href="/tags/图论/" style="font-size: 14px; color: #999">图论</a> <a href="/tags/多项式/" style="font-size: 14px; color: #999">多项式</a> <a href="/tags/字符串/" style="font-size: 17.33px; color: #828282">字符串</a> <a href="/tags/平衡树/" style="font-size: 14px; color: #999">平衡树</a> <a href="/tags/并查集/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/拓扑/" style="font-size: 14px; color: #999">拓扑</a> <a href="/tags/数据结构/" style="font-size: 22.33px; color: #606060">数据结构</a> <a href="/tags/数论，数学/" style="font-size: 15.67px; color: #8e8e8e">数论，数学</a> <a href="/tags/斜率优化/" style="font-size: 14px; color: #999">斜率优化</a> <a href="/tags/构造/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/树上差分/" style="font-size: 14px; color: #999">树上差分</a> <a href="/tags/模拟/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/模拟退火/" style="font-size: 14px; color: #999">模拟退火</a> <a href="/tags/游记/" style="font-size: 14px; color: #999">游记</a> <a href="/tags/瞎写/" style="font-size: 17.33px; color: #828282">瞎写</a> <a href="/tags/矩阵乘法/" style="font-size: 14px; color: #999">矩阵乘法</a> <a href="/tags/线段树/" style="font-size: 19px; color: #777">线段树</a> <a href="/tags/缩点/" style="font-size: 14px; color: #999">缩点</a> <a href="/tags/网络流/" style="font-size: 15.67px; color: #8e8e8e">网络流</a> <a href="/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/费用流/" style="font-size: 15.67px; color: #8e8e8e">费用流</a> <a href="/tags/随机化/" style="font-size: 14px; color: #999">随机化</a> <a href="/tags/非传统题/" style="font-size: 15.67px; color: #8e8e8e">非传统题</a> <a href="/tags/骗分/" style="font-size: 17.33px; color: #828282">骗分</a>
     </div>
   </section>
 

@@ -761,9 +761,9 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/哈希/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>哈希</a>
-        
           <a href="/tags/字符串/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>字符串</a>
+        
+          <a href="/tags/哈希/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>哈希</a>
         
           <a href="/tags/STL/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>STL</a>
         
@@ -1001,107 +1001,6 @@
       
         
   <h2 class="title">
-    <a href="/2018/11/17/Solutions/Solution-CF1077C/">
-      题解 CF1077C Good Array
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://dilute.xyz" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Dilute</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-11-17</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/题解/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>题解</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>显然，我们可以发现一个序列是“好的”当且仅当这个序列中的最大值等于这个序列中的其他数之和相加，所以我们只需要保证序列单调递减，同时维护一下这个序列里面元素之和我们就可以$O(1)$判断一个序列是不是“好的”序列（$a_1 = Sum - a_1$）</p>
-<p>由于题目要求求出去掉哪些元素之后，这个序列会变为一个“好的”序列，所以我们只需要把原序列排序之后再按照刚刚说过的办法$O(1)$判断，只需要吧把原序列之中的$Sum$减去我们需要去掉的元素即可</p>
-<p>还有一点需要注意，我们需要特判去掉第一个的情况，这样删去后最大值就是原先的次大数，即$a_2$</p>
-<p>上代码QwQ</p>
-      
-        <div class="readmore">
-          <a href="/2018/11/17/Solutions/Solution-CF1077C/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
     <a href="/2018/11/17/Solutions/Solution-CF1068B/">
       题解 CF1068B LCM
     </a>
@@ -1213,6 +1112,107 @@
       
         
   <h2 class="title">
+    <a href="/2018/11/17/Solutions/Solution-CF1077C/">
+      题解 CF1077C Good Array
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://dilute.xyz" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Dilute</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2018-11-17</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/题解/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>题解</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>显然，我们可以发现一个序列是“好的”当且仅当这个序列中的最大值等于这个序列中的其他数之和相加，所以我们只需要保证序列单调递减，同时维护一下这个序列里面元素之和我们就可以$O(1)$判断一个序列是不是“好的”序列（$a_1 = Sum - a_1$）</p>
+<p>由于题目要求求出去掉哪些元素之后，这个序列会变为一个“好的”序列，所以我们只需要把原序列排序之后再按照刚刚说过的办法$O(1)$判断，只需要吧把原序列之中的$Sum$减去我们需要去掉的元素即可</p>
+<p>还有一点需要注意，我们需要特判去掉第一个的情况，这样删去后最大值就是原先的次大数，即$a_2$</p>
+<p>上代码QwQ</p>
+      
+        <div class="readmore">
+          <a href="/2018/11/17/Solutions/Solution-CF1077C/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
     <a href="/2018/10/24/Solutions/Solution-Luogu2547/">
       题解 洛谷P2547 [AHOI2004]DNA变异
     </a>
@@ -1298,9 +1298,9 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/哈希/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>哈希</a>
-        
           <a href="/tags/字符串/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>字符串</a>
+        
+          <a href="/tags/哈希/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>哈希</a>
         
       </div>
     

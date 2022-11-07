@@ -1027,9 +1027,9 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/哈希/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>哈希</a>
-        
           <a href="/tags/字符串/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>字符串</a>
+        
+          <a href="/tags/哈希/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>哈希</a>
         
           <a href="/tags/STL/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>STL</a>
         
@@ -1267,8 +1267,8 @@
       
         
   <h2 class="title">
-    <a href="/2018/11/17/Solutions/Solution-CF1077C/">
-      题解 CF1077C Good Array
+    <a href="/2018/11/17/Solutions/Solution-CF1068B/">
+      题解 CF1068B LCM
     </a>
   </h2>
 
@@ -1335,19 +1335,29 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>显然，我们可以发现一个序列是“好的”当且仅当这个序列中的最大值等于这个序列中的其他数之和相加，所以我们只需要保证序列单调递减，同时维护一下这个序列里面元素之和我们就可以$O(1)$判断一个序列是不是“好的”序列（$a_1 = Sum - a_1$）</p>
-<p>由于题目要求求出去掉哪些元素之后，这个序列会变为一个“好的”序列，所以我们只需要把原序列排序之后再按照刚刚说过的办法$O(1)$判断，只需要吧把原序列之中的$Sum$减去我们需要去掉的元素即可</p>
-<p>还有一点需要注意，我们需要特判去掉第一个的情况，这样删去后最大值就是原先的次大数，即$a_2$</p>
-<p>上代码QwQ</p>
+      <p><del>第一篇题解</del></p>
+<p>我们都知道$lcm(a, b) = \frac{a * b}{\gcd(a, b)}$</p>
+<p>∴ $\frac{lcm(a, b)}{a} = \frac{\frac{a * b}{\gcd(a, b)}}{a} = \frac{b}{\gcd(a, b)}$</p>
+<p>题目的意思就被我们转化成了求$\frac{b}{\gcd(a, b)}$的种类数</p>
+<p>又∵b是一个确定的数</p>
+<p>∴$\frac{b}{\gcd(a, b)}$的种类数就等于$\gcd(a, b)$的种类数</p>
+<p>由于$a$的范围在$[1, 10^{18}]$范围内，所以$\gcd(a, b)$的种类数就等于b的因数个数。</p>
+<p>因数个数就可以$O(\sqrt n)$求辣QwQ</p>
       
         <div class="readmore">
-          <a href="/2018/11/17/Solutions/Solution-CF1077C/" class="flat-box">
+          <a href="/2018/11/17/Solutions/Solution-CF1068B/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
         </div>
       
     </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/数论，数学/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>数论，数学</a>
+        
+      </div>
     
   </section>
 </article>

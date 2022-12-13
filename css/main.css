@@ -1,0 +1,107 @@
+@font-face{
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat.ttf');
+
+}
+
+@font-face{
+    font-family: 'Menlo';
+    src: url('../fonts/Menlo.ttf');
+}
+
+body{
+    font-family: 'Montserrat';
+}
+
+.line{
+    font-family: 'Menlo';
+}
+
+.text_page{
+    margin: 50px 100px 0px 100px;
+    padding: 30px 30px 30px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    line-height: 40px;
+}
+
+.text_page h2{
+    color:rgb(27, 195, 251);
+}
+
+
+.text_page blockquote {
+    font-style: italic;
+    border-left: 4px solid #CCCCCC ;
+    margin: 1em 0;
+    padding: 0 0 0 16px;
+}
+
+.highlight{
+    background-color: #1E1E1E;
+    margin: 16px 100px 16px 0px;
+}
+
+table{
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    line-height: 20px;
+    font-size: 1em;
+    padding: 10px 25px 10px 25px;
+}
+
+.meta{
+    color: #C586C0;
+}
+
+.meta-string{
+    color: #C37F67;
+}
+
+.function{
+    color: #569CD6;
+}
+
+.title{
+    color: #DCDCAA;
+}
+
+.params{
+    color: #DCDCAA;
+}
+
+.keyword{
+    color: #569CD6;
+}
+
+.number{
+    color: #A7CEA8;
+}
+
+.string{
+    color: #CE9178;
+}
+
+.built_in{
+    color: #DCDCAA;
+}
+
+.literal{
+    color: #569CD6;
+}
+
+.code{
+    padding: 0 0 0 20px;
+}
+
+
+a:link {color: pink}
+a:link {text-decoration: none}
+
+a:visited {color: pink}
+a:visited {text-decoration: none}
+
+a:hover {color: rgb(27, 195, 251)}
+a:hover {text-decoration: underline}
+
+a:active {color: rgb(27, 195, 251)}
+a:active {text-decoration: underline}

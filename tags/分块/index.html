@@ -54,43 +54,56 @@
         <html>
     <head><meta name="generator" content="Hexo 3.9.0">
         <style>
-            .setu{
-                width: 6000px;
-                height: 850px;
-                margin: 0 auto;
-                margin-top: -100px;
+            .setu_frame{
+                z-index: -114514;
+                margin-top: -150px;
+                width: 99.4%;
+                height: 1100px;
+                overflow: hidden;
                 position: absolute;
+            }
+            .setu{
+                width: 600%;
+                height: 1100px;
+                margin: 0 auto;
+                position: absolute;
+                overflow: hidden;
                 font-size: 0px;
                 animation: text 100s infinite linear;
 
-                opacity: 0.2;
-                filter: progid:DXImageTransform.Microsoft.alpha(opacity=20);
+                opacity: 0.3;
+                filter: progid:DXImageTransform.Microsoft.alpha(opacity=30);
             }
 
             .setu img{
-                width: 1200px;
-                height: 850px;
+                overflow: hidden;
+                width: 16.66%;
+                height: 1000px;
             }
 
-            @keyframes setu{
+            @keyframes text{
                 0%, 18%{
                     margin-left: 0px;
                 }
 
                 20%, 38%{
-                    margin-left: -1200px;
+                    margin-left: -100%;
                 }
     
                 40%, 58%{
-                    margin-left: -2400px;
+                    margin-left: -200%;
                 }
 
                 60%, 78%{
-                    margin-left: -3600px;
+                    margin-left: -300%;
                 }
 
                 80%, 98%{
-                    margin-left: -4800px;
+                    margin-left: -400%;
+                }
+
+                100%{
+                    margin-left: -500%;
                 }
             }
 
@@ -136,12 +149,15 @@
         </style>
     </head>
     <body>
-        <div class="setu">
-            <img src="dilute.xyz/images/1.jpg" alt>
-            <img src="dilute.xyz/images/2.png" alt>
-            <img src="dilute.xyz/images/3.jpg" alt>
-            <img src="dilute.xyz/images/4.png" alt>
-            <img src="dilute.xyz/images/5.png" alt>
+        <div class="setu_frame">
+            <div class="setu">
+                <img src="https://dilute.xyz/images/setu/1.jpg" alt>
+                <img src="https://dilute.xyz/images/setu/2.png" alt>
+                <img src="https://dilute.xyz/images/setu/3.jpg" alt>
+                <img src="https://dilute.xyz/images/setu/4.png" alt>
+                <img src="https://dilute.xyz/images/setu/5.png" alt>
+                <img src="https://dilute.xyz/images/setu/1.jpg" alt>
+            </div>
         </div>
         <div class="cover_page">
             <p>

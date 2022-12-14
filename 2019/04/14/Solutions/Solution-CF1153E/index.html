@@ -23,7 +23,7 @@
                 height: 70px;
             }
 
-            .menu:focus .menu-content{
+            .menu:focus .menu_content{
                 animation: show_menu 0.3s forwards ease; 
             }
 
@@ -41,7 +41,7 @@
                 }
             }
 
-            .menu-close-button:focus+.menu-content{
+            .menu-close-button:focus+.menu_content{
                 animation: hide_menu 0.3s forwards ease;
             }
 
@@ -59,7 +59,7 @@
                 }
             }
 
-            .menu-content{
+            .menu_content{
                 /* display: none; */
                 position: absolute;
                 background-color: #FFFFFF;
@@ -94,10 +94,12 @@
         <div class = "menu" tabindex = "1">
             <img src = "https://dilute.xyz/images/MENU-OPEN.png">
                 <div class = "menu-close-button" tabindex = "2">
-                    <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+            </div>
+            <div class = "menu_content">
+                <div class = "avatar_frame">
+
                 </div>
-                <div class = "menu-content">
-                <p> THIS IS JUST a TEMPORARY MENU </p>
             </div> 
        
         </div>

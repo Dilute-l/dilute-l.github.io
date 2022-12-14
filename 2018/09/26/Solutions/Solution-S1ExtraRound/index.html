@@ -19,15 +19,64 @@
                 height: 100px;
             }
 
+            .menu img{
+                height: 70px;
+            }
+
+            .menu:focus .menu-content{
+                animation: show_menu 0.3s forwards ease; 
+            }
+
+            .menu:focus .menu-close-button{
+                animation: show_menu 0.3s forwards ease;
+            }
+
+            @keyframes show_menu{
+                0%{
+                    margin-top: -1000px;
+                }
+
+                100%{
+                    margin-top: -80px;
+                }
+            }
+
+            .menu-close-button:focus+.menu-content{
+                animation: hide_menu 0.3s forwards ease;
+            }
+
+            .menu-close-button:focus{
+                animation: hide_menu 0.3s forwards ease;
+            }
+
+            @keyframes hide_menu{
+                0%{
+                    margin-top: -80px;
+                }
+
+                100%{
+                    margin-top: -1000px;
+                }
+            }
+
             .menu-content{
-                display: none;
-                position: relative;
+                /* display: none; */
+                position: absolute;
                 background-color: #FFFFFF;
-                margin: -40px 0 0 0;
-                height: 890px;
+                margin-top: -1000px;
+                height: 820px;
                 text-align: center;
+                width: 100%;
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                z-index: -1;
+                z-index: 2;
+            }
+
+            .menu-close-button{
+                position: absolute;
+                right: 0px;
+                margin-top: -1000px;
+                height: 100px;
+                z-index: 3;
             }
 
             .bottom{
@@ -42,9 +91,11 @@
     </head>
 
     <body>
-        <div class = "menu">
+        <div class = "menu" tabindex = "1">
             <img src = "https://dilute.xyz/images/MENU-OPEN.png">
-            
+                <div class = "menu-close-button" tabindex = "2">
+                    <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+                </div>
                 <div class = "menu-content">
                 <p> THIS IS JUST a TEMPORARY MENU </p>
             </div> 

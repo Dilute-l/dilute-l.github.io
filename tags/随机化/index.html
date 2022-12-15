@@ -10,13 +10,18 @@
         <style>
         
             .menu{
-                /* z-index:2; */
+                top: 0;
+                z-index:2;
                 /* background-color: #CCCCCC; */
-                position: relative;
-                display: block;
-                margin: 0 auto;
-                text-align: right;
+                position: absolute;
+                left: 0;
                 height: 100px;
+                width: 99.95%;
+            }
+
+            .open_button{
+                position: absolute;
+                right: 0;
             }
 
             .menu img{
@@ -33,11 +38,11 @@
 
             @keyframes show_menu{
                 0%{
-                    margin-top: -1000px;
+                    margin-top: -110%;
                 }
 
                 100%{
-                    margin-top: -60px;
+                    margin-top: 0;
                 }
             }
 
@@ -51,11 +56,11 @@
 
             @keyframes hide_menu{
                 0%{
-                    margin-top: -60px;
+                    margin-top: 0px;
                 }
 
                 100%{
-                    margin-top: -1000px;
+                    margin-top: -110%;
                 }
             }
 
@@ -63,18 +68,18 @@
                 /* display: none; */
                 position: absolute;
                 background-color: #FFFFFF;
-                margin-top: -1000px;
-                height: 910px;
+                margin-top: -110%;
                 text-align: center;
                 width: 100%;
+                height: calc(100vh);
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                 z-index: 2;
             }
 
             .menu-close-button{
                 position: absolute;
-                right: 0px;
-                margin-top: -1000px;
+                right: 0;
+                margin-top: -110%;
                 height: 100px;
                 z-index: 3;
             }
@@ -84,6 +89,29 @@
                 text-align: center;
                 color: gray;
             }
+
+            .avatar_frame{
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                border-radius: 100%;
+                overflow: hidden;
+                height: 200px;
+                width:200px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            .avatar_frame img{
+                height: 100%;
+                width: 100%;
+            }
+
+            .avatar{
+                position: relative;
+                text-align: center;
+                height: 100px;
+            }
         </style>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -92,13 +120,17 @@
 
     <body>
         <div class = "menu" tabindex = "1">
-            <img src = "https://dilute.xyz/images/MENU-OPEN.png">
-                <div class = "menu-close-button" tabindex = "2">
+            <div class = "open_button">
+                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+            </div>
+            <div class = "menu-close-button" tabindex = "2">
                 <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
             </div>
             <div class = "menu_content">
-                <div class = "avatar_frame">
-
+                <div class = "avatar"></div>
+                    <div class = "avatar_frame">
+                        <img src = "https://dilute.xyz/images/avatar.png">
+                    </div>
                 </div>
             </div> 
        
@@ -109,30 +141,32 @@
         <style>
             .setu_frame{
                 z-index: -114514;
-                margin-top: -150px;
-                margin-left: -0.5%;
-                width: 99.95%;
-                height: 980px;
+                top: 0;
+                left: 0;
+                margin-left: 0;
+                width: 100%;
+                height: 100%;
                 overflow: hidden;
                 position: absolute;
             }
             .setu{
                 width: 600%;
-                height: 980px;
+                height: 100%;
                 margin: 0 auto;
                 position: absolute;
                 overflow: hidden;
                 font-size: 0px;
-                animation: sese 100s infinite linear;
+                animation: sese 50s infinite linear;
 
                 opacity: 0.3;
                 filter: progid:DXImageTransform.Microsoft.alpha(opacity=30);
             }
 
             .setu img{
+                width: 16.666%;
+                height: 100%;
                 overflow: hidden;
-                width: 16.66%;
-                height: 980px;
+                /* object-fit: cover; */
             }
 
             @keyframes sese{
@@ -162,29 +196,33 @@
             }
 
             .cover_page {
-                height: 400px;
-                /* line-height: 940px; */
-                margin: 0 auto;
-                position: relative;
+                height: 50%;
+                width: 99.95%;
+                left: 0;
+                bottom: 50%;
+                position: absolute;
                 z-index: -2;
             }
 
             .cover_page p{
-                position: absolute;
-                bottom: 0;
+                position: relative;
+                top: 50%;
                 width: 100%;
                 text-align: center;
             }
 
             .cover_page img{
-                width: 50%
+                width: 50%;
             }
 
             .bottom_half{
                 /* z-index: -2; */
-                height:450px;
-                margin: 0 auto;
-                position:relative;
+                top: 50%;
+                left: 0;
+                height: 50%;
+                width: 99.95%;
+                
+                position: absolute;
                 text-align:center;
                 font-size: 18px;
                 color: gray
@@ -199,6 +237,14 @@
 
             .post_page h2{
                 color:rgb(27, 195, 251);
+            }
+
+            .empty_blocking{
+                top: 0px;
+                bottom: 0px;
+                width: 100%;
+                height: calc(100vh);
+                position: relative;
             }
         </style>
     </head>
@@ -245,7 +291,9 @@
 
         </div>
 
-
+        <div class="empty_blocking">
+            <div></div>
+        </div>
         
         
             

@@ -6,7 +6,9 @@
         <meta charset="utf-8">
 
         <link rel="stylesheet" href="/css/main.css">
-        
+
+        <script src="/js/main.js"></script>
+
         <style>
         
             .menu{
@@ -19,7 +21,7 @@
                 width: 99.95%;
             }
 
-            .open_button{
+            .openButton{
                 position: absolute;
                 right: 0;
             }
@@ -28,11 +30,11 @@
                 height: 50px;
             }
 
-            .menu:focus .menu_content{
+            /* .menu:focus .menu_content{
                 animation: show_menu 0.3s forwards ease; 
             }
 
-            .menu:focus .menu-close-button{
+            .menu:focus .close_button{
                 animation: show_menu 0.3s forwards ease;
             }
 
@@ -46,11 +48,11 @@
                 }
             }
 
-            .menu-close-button:focus+.menu_content{
+            .close_button:focus+.menu_content{
                 animation: hide_menu 0.3s forwards ease;
             }
 
-            .menu-close-button:focus{
+            .close_button:focus{
                 animation: hide_menu 0.3s forwards ease;
             }
 
@@ -62,7 +64,7 @@
                 100%{
                     margin-top: -110%;
                 }
-            }
+            } */
 
             .menu_content{
                 /* display: none; */
@@ -76,7 +78,7 @@
                 z-index: 2;
             }
 
-            .menu-close-button{
+            .close_button{
                 position: absolute;
                 right: 0;
                 margin-top: -110%;
@@ -96,7 +98,7 @@
                 overflow: hidden;
                 height: 200px;
                 width:200px;
-                position: absolute;
+                position: relative;
                 left: 0;
                 right: 0;
                 margin: auto;
@@ -110,7 +112,32 @@
             .avatar{
                 position: relative;
                 text-align: center;
-                height: 100px;
+                height: 350px;
+                top: 50px;
+            }
+
+            .name_logo{
+                position: relative;
+                text-align: center;
+                height: 60px;
+            }
+
+            .name_logo h1{
+                color: pink;
+                font-size: 60px;
+            }
+
+            .portals{
+                position: absolute;
+                color: pink;
+                text-align: center;
+                border-radius: 25px;
+                height: 50px;
+                width: 100px;
+                border: 2px solid pink;
+                z-index: 1145114;
+                font-size: 25px;
+                line-height: 50px;
             }
         </style>
         
@@ -119,18 +146,44 @@
     </head>
 
     <body>
-        <div class = "menu" tabindex = "1">
-            <div class = "open_button">
+        <div class = "menu">
+            <div class = "openButton">
                 <img src = "https://dilute.xyz/images/MENU-OPEN.png">
             </div>
-            <div class = "menu-close-button" tabindex = "2">
+            <div class = "close_button">
                 <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
             </div>
             <div class = "menu_content">
-                <div class = "avatar"></div>
+                <div class = "avatar">
                     <div class = "avatar_frame">
                         <img src = "https://dilute.xyz/images/avatar.png">
                     </div>
+                    <div class = "name_logo">
+                        <h1> Dilute </h1>
+                    </div>
+                </div>
+
+                <div style = "margin-top: 50px;">
+                    <a href = "https://dilute.xyz">
+                        <div class = "portals" style = "margin-left: calc(50vw - 230px)">
+                            主页
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/archives">
+                        <div class = "portals" style = "margin-left: calc(50vw - 110px)">
+                            归档
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xy/firends">
+                        <div class = "portals" style = "margin-left: calc(50vw + 10px)">
+                            朋友
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/about">
+                        <div class = "portals" style = "margin-left: calc(50vw + 130px)">
+                            关于
+                        </div>
+                    </a>
                 </div>
             </div> 
        
@@ -225,7 +278,35 @@
 
         </div>
 
-        <script src="/js/main.js"></script>
-
     </body>
+        
+    <script>
+        function moveTop(obj, num) {
+            clearInterval(obj.timeOut)
+            obj.timeOut = setInterval(function () {
+                let step = (num - parseInt(getComputedStyle(obj, null).marginTop)) / 10
+                step = step > 0 ? Math.ceil(step) : Math.floor(step)
+                obj.style.marginTop = parseInt(getComputedStyle(obj, null).marginTop) + step + 'px';
+            },15)
+        }
+
+        let openb = document.querySelector('.openButton')
+        let close = document.querySelector('.close_button')
+        let div = document.querySelector('.menu_content')
+        let original = parseInt(getComputedStyle(div, null).marginTop)
+
+        openb.style.marginLeft = '200px'
+
+        openb.addEventListener('click',function () {
+            moveTop(div, 0)
+            moveTop(close, 0);
+        })
+
+        close.addEventListener('click', function(){
+            moveTop(div, original)
+            moveTop(close, original);
+        })
+
+        
+    </script>
 </html>

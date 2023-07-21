@@ -232,15 +232,14 @@
         </div>
 
         <div class="text_page">
-            <h2 id="令人智熄的二分操作"><a class="markdownIt-Anchor" href="#令人智熄的二分操作"></a> 令人智熄的二分操作</h2>
-<p><a href="https://www.luogu.org/record/show?rid=6347426" target="_blank" rel="noopener">AC记录</a></p>
+            <h2 id="令人智熄的二分操作"><a href="#令人智熄的二分操作" class="headerlink" title="令人智熄的二分操作"></a>令人智熄的二分操作</h2><p><a href="https://www.luogu.org/record/show?rid=6347426" target="_blank" rel="noopener">AC记录</a></p>
 <p><em>要看正常的解法请看其他题解</em></p>
 <p>而且还蛮快的。。。</p>
 <p>其实，这是非常奇葩的一个想法</p>
 <p>总体思路就是：二分答案</p>
 <p>你没听错，二分答案</p>
-<p>我们从题面中可以看到，其实这道题的拥挤度也就<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10000</mn></mrow><annotation encoding="application/x-tex">10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>而已，所以我们就会发现二分似乎可以？？？</p>
-<p>存图存完之后直接二分，二分的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>h</mi><mi>e</mi><mi>c</mi><mi>k</mi><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Check()</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mopen">(</span><span class="mclose">)</span></span></span></span>里面打一个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mi>F</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">BFS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>，来求能否通往终点，就好了</p>
+<p>我们从题面中可以看到，其实这道题的拥挤度也就$10000$而已，所以我们就会发现二分似乎可以？？？</p>
+<p>存图存完之后直接二分，二分的$Check()$里面打一个$BFS$，来求能否通往终点，就好了</p>
 <p>具体的东西就上代码来看吧</p>
 <a id="more"></a>
 <hr>

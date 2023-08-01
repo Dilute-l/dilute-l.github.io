@@ -94,14 +94,20 @@ table{
 }
 
 
-a:link {color: pink}
-a:link {text-decoration: none}
+a:link {
+    transition: all 0.5s;
+    color: pink;
+    text-decoration: none;
+}
 
 a:visited {color: pink}
 a:visited {text-decoration: none}
 
-a:hover {color: rgb(27, 195, 251)}
-a:hover {text-decoration: underline}
+a:hover {
+    transition: all 0.5s;
+    color: rgb(27, 195, 251);
+    text-decoration: underline;
+}
 
 a:active {color: rgb(27, 195, 251)}
 a:active {text-decoration: underline}

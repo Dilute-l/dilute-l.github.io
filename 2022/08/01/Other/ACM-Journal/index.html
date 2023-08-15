@@ -243,12 +243,19 @@
             <p>HZEZ OIer Dilute 的故事虽然已经结束……</p>
 <p>但是接下来是属于 HIT ACMer Dilute 的时间！</p>
 <a id="more"></a>
-<h2 id="202285"><a class="markdownIt-Anchor" href="#202285"></a> 2022.8.5</h2>
+<h2 id="202388"><a class="markdownIt-Anchor" href="#202388"></a> 2023.8.8</h2>
+<h2 id="202387"><a class="markdownIt-Anchor" href="#202387"></a> 2023.8.7</h2>
+<p>E 线段树维护每个区间上最左最右的未成对左括号和右括号以及已经成对的括号数量即可。</p>
+<p>B 傻逼题，暴力匹配就完了</p>
+<p>F 用可持久化 Trie 树来维护，每次相当于全局异或上一个值，在询问的时候处理即可</p>
+<p>I Trie 裸题，没啥好说的</p>
+<p>C 暴力 dp，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{i, j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 代表模板和当前字符串分别匹配到第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i, j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 位的情况是否可行，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O} (n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 转移即可。</p>
+<h2 id="202385"><a class="markdownIt-Anchor" href="#202385"></a> 2023.8.5</h2>
 <p><a href="https://codeforces.com/problemset/problem/383/E" target="_blank" rel="noopener">F</a> 高维前缀和裸题，没啥好说的</p>
 <p><a href="https://acm.hdu.edu.cn/showproblem.php?pid=7337" target="_blank" rel="noopener">E</a> 暴力找出所有合法的数对之后做扫描线即可，主意树状数组要替换成分块来平衡修改和查询的复杂度</p>
 <p><a href="https://www.luogu.com.cn/problem/P3899" target="_blank" rel="noopener">A</a> 正解应该是线段树合并或者二位数点啥的，但我写了个奇怪的 bfs序 + 倍增做法，如果有时间专门写篇题解吧。</p>
 <p><a href="https://acm.hdu.edu.cn/showproblem.php?pid=7284" target="_blank" rel="noopener">C</a> 因为每次修改的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> 不降，所以如果一个数触发了取绝对值，之后每次肯定都会触发，那么先预处理出每个点触发取绝对值的时间点，之后用两棵线段树维护即可。</p>
-<h2 id="202284"><a class="markdownIt-Anchor" href="#202284"></a> 2022.8.4</h2>
+<h2 id="202384"><a class="markdownIt-Anchor" href="#202384"></a> 2023.8.4</h2>
 <p>A 裸莫队，没啥好说的</p>
 <p>B 裸带修莫队，没啥好说的</p>
 <p>F 维护一个块内排过序的数组 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>，每次修改暴力重构边缘块，中间直接全体打标机即可。</p>
@@ -265,10 +272,10 @@ H400000v40H845.2724
 s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
 c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
 M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 预处理。</p>
-<h2 id="202283"><a class="markdownIt-Anchor" href="#202283"></a> 2022.8.3</h2>
+<h2 id="202383"><a class="markdownIt-Anchor" href="#202383"></a> 2023.8.3</h2>
 <p>A, B, F fft, ntt, fwt 模板题，没啥好讲的</p>
 <p>C 把模式串反过来，然后把 ? 设成 0，其他的第 i 位设成 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><msup><mn>0</mn><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">30^i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span></span></span></span></span></span></span>，然后发现就可以用类哈希状物判断是否匹配。</p>
-<h2 id="202282"><a class="markdownIt-Anchor" href="#202282"></a> 2022.8.2</h2>
+<h2 id="202382"><a class="markdownIt-Anchor" href="#202382"></a> 2023.8.2</h2>
 <p>验题场，不能写</p>
 <h2 id="202381"><a class="markdownIt-Anchor" href="#202381"></a> 2023.8.1</h2>
 <p>A Manacher 裸题，没啥好说的。</p>

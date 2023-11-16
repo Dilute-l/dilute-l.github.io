@@ -255,11 +255,16 @@
 <hr>
 <p>那么这次问题又出在哪儿了呢？</p>
 <p>我们考虑以下情况</p>
-<p>输入数据：<br><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">100 </span><span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>输入数据：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">100 </span><span class="number">0</span></span><br></pre></td></tr></table></figure>
 <p>如果按照我们原来的思路，那么我们的程序会输出0，但是实际上可能会怎样呢？</p>
 <blockquote>
 <p>警察来到了一个神奇的地方，这里的人们“鸡犬相闻，而民老死不相往来”（大雾），说白了就是谁都不认识</p>
+</blockquote>
+<blockquote>
 <p>警察调查了前99个人，发现这99个人里面谁都不是杀手。</p>
+</blockquote>
+<blockquote>
 <p>正在警察准备调查第100个人时，突然发现只剩一个人了，<strong>但是前99个人都不是杀手，所以最后一个人肯定是杀手，不用去调查了</strong></p>
 </blockquote>
 <p>我们瞎算一通，发现出现这种情况的概率是1%，所以我们原来的程序错了！</p>

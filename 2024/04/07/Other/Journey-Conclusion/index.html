@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dilute's Blog</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="/css/main.css">
+
+        <script src="/js/main.js"></script>
+
+        <style>
+        
+            .menu{
+                top: 0;
+                z-index:2;
+                /* background-color: #CCCCCC; */
+                position: absolute;
+                left: 0;
+                height: 100px;
+                width: 99.95%;
+            }
+
+            .openButton{
+                position: absolute;
+                right: 0;
+            }
+
+            .menu img{
+                height: 50px;
+            }
+
+            /* .menu:focus .menu_content{
+                animation: show_menu 0.3s forwards ease; 
+            }
+
+            .menu:focus .close_button{
+                animation: show_menu 0.3s forwards ease;
+            }
+
+            @keyframes show_menu{
+                0%{
+                    margin-top: -110%;
+                }
+
+                100%{
+                    margin-top: 0;
+                }
+            }
+
+            .close_button:focus+.menu_content{
+                animation: hide_menu 0.3s forwards ease;
+            }
+
+            .close_button:focus{
+                animation: hide_menu 0.3s forwards ease;
+            }
+
+            @keyframes hide_menu{
+                0%{
+                    margin-top: 0px;
+                }
+
+                100%{
+                    margin-top: -110%;
+                }
+            } */
+
+            .menu_content{
+                /* display: none; */
+                position: absolute;
+                background-color: #FFFFFF;
+                margin-top: -110%;
+                text-align: center;
+                width: 100%;
+                height: calc(100vh);
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
+            }
+
+            .close_button{
+                position: absolute;
+                right: 0;
+                margin-top: -110%;
+                height: 100px;
+                z-index: 3;
+            }
+
+            .bottom{
+                margin: 100px 100px 0 0;
+                text-align: center;
+                color: gray;
+            }
+
+            .avatar_frame{
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                border-radius: 100%;
+                overflow: hidden;
+                height: 200px;
+                width:200px;
+                position: relative;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            .avatar_frame img{
+                height: 100%;
+                width: 100%;
+            }
+
+            .avatar{
+                position: relative;
+                text-align: center;
+                height: 350px;
+                top: 50px;
+            }
+
+            .name_logo{
+                position: relative;
+                text-align: center;
+                height: 60px;
+            }
+
+            .name_logo h1{
+                color: pink;
+                font-size: 60px;
+            }
+
+            .portals{
+                position: absolute;
+                color: pink;
+                text-align: center;
+                border-radius: 25px;
+                height: 50px;
+                width: 100px;
+                border: 2px solid pink;
+                z-index: 1145114;
+                font-size: 25px;
+                line-height: 50px;
+                transition: all 0.5s
+            }
+
+            .portals:hover{
+                transition: all 0.5s;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                color: white;
+                background-color: pink;    
+            }
+
+        </style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class = "menu">
+            <div class = "openButton">
+                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+            </div>
+            <div class = "close_button">
+                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+            </div>
+            <div class = "menu_content">
+                <div class = "avatar">
+                    <div class = "avatar_frame">
+                        <img src = "https://dilute.xyz/images/avatar.png">
+                    </div>
+                    <div class = "name_logo">
+                        <h1> Dilute </h1>
+                    </div>
+                </div>
+
+                <div style = "margin-top: 50px;">
+                    <a href = "https://dilute.xyz">
+                        <div class = "portals" style = "margin-left: calc(50vw - 230px)">
+                            主页
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/archives">
+                        <div class = "portals" style = "margin-left: calc(50vw - 110px)">
+                            归档
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/friends">
+                        <div class = "portals" style = "margin-left: calc(50vw + 10px)">
+                            朋友
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/about">
+                        <div class = "portals" style = "margin-left: calc(50vw + 130px)">
+                            关于
+                        </div>
+                    </a>
+                </div>
+
+                <div style = "height: 100px"> </div>
+
+                
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=320 src="//music.163.com/outchain/player?type=0&id=7567348850&auto=1&height=430"></iframe>
+            </div> 
+       
+        </div>
+
+        <html>
+    <head><meta name="generator" content="Hexo 3.9.0">
+        <style>
+            .cover_page {
+                height: 300px;
+                /* line-height: 940px; */
+                margin: 0 auto;
+                position: relative;
+                /* z-index: -2; */
+            }
+
+            .cover_page p{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .cover_page img{
+                width: 50%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="cover_page">
+            <p>
+                <a href="https://dilute.xyz"> <img src="https://dilute.xyz/images/logo.png"> </a>
+            </p>
+            <!-- diltue.xyz -->
+        </div>
+
+        <div class="text_page">
+            <h1> 赛季总结 —— Dilute ver. & 后日谈 </h1>
+            
+                <!-- <div> 2097486090 </div> -->
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="40%" height="86" src="//music.163.com/outchain/player?type=2&id=2097486090&auto=1&height=66"></iframe>
+            
+        </div>
+        
+
+        <div class="text_page">
+            <h2 id="赛季总结-dilute-ver-后日谈"><a class="markdownIt-Anchor" href="#赛季总结-dilute-ver-后日谈"></a> 赛季总结 —— Dilute ver. &amp; 后日谈</h2>
+<p>既然是赛季总结，那就先总结一下这个赛季的成绩吧。</p>
+<a id="more"></a>
+<p>队名：月间天路</p>
+<p>ICPC 西安 Ag rk 51</p>
+<p>ICPC 南京 Au rk 20</p>
+<p>CCPC 深圳 Au rk 6</p>
+<p>Ec Final Cu rk 114</p>
+<p>CCPC Final Cu rk 63</p>
+<p>队伍最开始组起来是因为我原定的要组的队伍因为其中一个人跑路散了，另一个人找到了冲击wf级别的队友，于是我只能重新组队，先是 tyf 找到了我，于是我们先两个人预组好，问题就变成了第三个人怎么找，当时机房里比较有实力的基本上都已经组好队了，或者是已经两个人预组好了，所以我提出说找个新大一的 xdx 去抽奖，于是我们联系了两个学弟，第一个学弟来到学校之后，我们觉得他的水平不是很够，但是另外一个——也就是 aw 表现的非常猛，刚来学校的第一场周赛就把 tyf 给狠狠的爆了。我和 tyf 当时的想法就是：就他了。于是我们队就这么形成了。</p>
+<p>在我们队刚刚成型的时候，aw突然开始梦（bai）游（lan），在我们帮 Sooke 验出给牛客多校的时候这个 b 甚至一题没过，导致我对他的真实水平产生了一点怀疑。aw 之前第一天来的时候校内赛重拳出击暴打我和 tyf，结果多校和我们一起打的时候直接开演。这点怀疑在打完 ccpc 网络赛之后来到了巅峰，引用 yyf （可能）说过的一句话：</p>
+<blockquote>
+<p>你们哪怕过一道题！哪怕一道题！</p>
+</blockquote>
+<p>这两个 b 打这场网络赛一题没过，结合他们之前之后那么猛的表现，我合理怀疑他们这场是在演我。</p>
+<p>Ps：tyf 在这之后经常强调他并不是一题没过，因为他告诉我<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>−</mo><msup><mi>n</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">(n + 1) ^2 - n^2 = 2n + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，所以那题他有 0.9 题的贡献。</p>
+<p>不过关于我们队实际实力的怀疑很快就结束了，因为一周后的另一场网络赛，我们三个人状态都很好，拿到了很好的成绩，至少为我们队争取到了一些选赛站的空间。CCPC 我们只能在深圳和哈尔滨之间选，因为大家都想旅游所以毫无疑问的选择了深圳，而至于 ICPC，我们因为时间冲突被迫选了南京站（因为和哈尔滨站冲突，而在我们后选的队伍都要打哈尔滨站），另一站选择了听学长说很好拿金牌（伏笔）的西安站。</p>
+<p>之后我们大概就保持着一个礼拜两次训练的频率，因为 aw 住在二校区，所以我们一个礼拜只有周末有一次线下训练，另外一次训练就放在线上了。tyf 觉得他和 aw 表现不好，于是他们两个每个礼拜还额外加训一场，因为是两个人，所以他们称其为自行车。</p>
+<p>如果比较了解 xCPC 的赛程，就能看出来我们这个赛季强调一个速通，西安南京分别是最早的和第二早的赛站，而深圳站的时间也不晚。所以我们没训多久就来到了西安。我们赛前一致认为西安是我们这个赛季最有希望拿金的赛站，毕竟打的人多，而且平均水平应该也不是很高，不像南京那种强队云集的场。结果西安站 aw 一个人爆 C，tyf 只做了一个题，我甚至一题都没写。虽然滚榜前我们还在金线往上，不过大家都心知肚明被我们寄予厚望的西安站已经寄掉了。aw 最后的 A 也没有调出来，我看他坐在电脑前边拿手捂着眼睛的样子感觉快哭了的样子（虽然据本人说根本没哭）。我当时的思维一整个就发散开来了，想到我们之前还对他的水平抱有一丝怀疑的态度，结果这场反倒是我拖累了他们两个，所以打完回到哈尔滨之后，我提出我和 tyf 两个人组自行车打，正好那个礼拜 aw 要准备考试，所以我和 tyf 一个礼拜加训了很多场，至少是在南京站之前把状态找回来了一些。那一周过的很快（不如说我觉得整个赛季一转眼就过去了）。很快就来到了一周之后的南京站。</p>
+<p>我们在刚组队的时候就已经说好，tyf 如果今年没有拿到金牌，明年就不会再花一年全力搞竞赛，换句话说就是，如果我们南京拿不到金牌的话明年队伍就要解散了（虽然这句话怎么样都像是番里或者电视剧里会出现的某种为了煽情加的设定，但这就是真的）。好在南京我们三个人的发挥都非常在线。我把 medium-easy 基本全都快速过掉了，aw 更是直接秒了 M，tyf 虽然直接过的题只有一题，但是其他题的算法和写法都是我们和他一起敲定的，我们基本没有 dirt 主要就是他的功劳。</p>
+<p>结果南京站当天哈尔滨下大雪，导致我们回程的飞机直接取消了。我们被迫在南京多待两天。结果我们第二天在游戏厅里发现我们新买的航班也取消了，最后我们的解决方案是买了一张火车票准备在火车上过一夜回哈尔滨，在回哈尔滨的火车上我也被我的队友催更着写下了<a href="https://dilute.xyz/2023/11/07/Other/Journey-2023ICPCNanjing/">这场比赛的游记</a>。</p>
+<p>回到哈尔滨之后我们基本没待几天就马上去了深圳站。深圳站因为是 CCPC，而且我们已经拿到金牌，没有南京站时的那么大的压力了，三个人直接开启旅游模式，热身赛前一天 tyf 去见了自己哈工深的网友，我跑去见了我港中深的同学。热身赛在 zxy 的 py 下成功 ak 了。第二天我和 aw 状态直接拉满，只可惜 tyf 当天本来还有希望过一道题，结果因为他觉得自己搞不明白爆long long 的问题直接遗憾离场了。我上机上来就是一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="monospace">#define</mtext><mtext> </mtext><mtext mathvariant="monospace">long</mtext><mtext> </mtext><mtext mathvariant="monospace">long</mtext><mtext> </mtext><mtext mathvariant="monospace">__int128</mtext></mrow><annotation encoding="application/x-tex">\texttt{\#define long long \_\_int128}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">#define long long __int128</span></span></span></span></span> ，强调一个受够了繁文缛节。可能是因为大家已经卸下压力了，正常比赛打的非常欢乐，排名全程都非常好看，可惜我最后一题写丑了，不然还是有希望捧杯的。</p>
+<p>因为队友很喜欢看，所以也写了一篇<a href="https://dilute.xyz/2023/11/16/Other/Journey-2023CCPCShenzhen/">深圳站的游记</a>。</p>
+<h2 id="后日谈-ec-final-ccpc-final"><a class="markdownIt-Anchor" href="#后日谈-ec-final-ccpc-final"></a> 后日谈 —— EC Final &amp; CCPC Final</h2>
+<p>为什么说这段是后日谈呢，因为这篇文章本来是准备打完深圳站就去写的，结果因为我太鸽了，所以拖到了 EC Final 打完之后才开始写，结果后来因为我又继续鸽，我直接说要不等 CCPC Final 打完之后再发好了，于是就咕到了现在，也算是某种意义上的后日谈吧。后面还会有省赛和四省赛，那个就当 DLC 吧（笑）</p>
+<p>在寒假回家之前去了 EC Final。aw 虽然这场场上打的挺好的，但是场外是真的唐。刚从学校里出来的时候 aw 一掏口袋，发现耳机没带，仔细一想，发现落我寝室了。结果到机场再一掏口袋，发现身份证也没带。上海的物价是真的高，比哈尔滨这种偏远贫穷地区不知道高到哪里去了。赛时具体的表现，因为已经过了很久，说实话现在已经不太记得那个时候怎么打的了，只记得当时 J 题最后写了个假的解法，aw的数据结构也写不完，最后两题都烂手上了。遗憾拿了个铜牌前列。打完比赛和队友和 Sooke 第一次去唱了K。第二天华为挑战赛，瞎 jb 写的算法竟然拿了个特等奖，属于是意外之喜，就是闭幕式有点又臭又长。最后我们再在上海待了一天去外滩和一些地方玩了玩，然后就回了杭州。</p>
+<p>过了一个暑假，在室友的床上找到了 aw 遗失的耳机（但是因为去 ccpcf 的时候忘记带上了，所以到现在还没有还给他）。开学过了一个多月之后去打 ccpc final。 赛前我们都说不打铁就算胜利，但是说实话，不管是从 vp 的结果还是我们自己的期望来讲还是希望能打一个更好的成绩回来的。礼拜五下午翘了大半天课去成都，当天晚上我们队三个人和 417 dyxg Sooke 六个人一起去吃了饭，去吃饭的时候我和 dyxg 和 Sooke 一辆车，417 aw tyf 一车。于是就发生了如下的对话。</p>
+<blockquote>
+<p>（刚上车）tyf：首先，我不是男同，但是 dyxg 真的好帅啊，他还在 ZJU 读书。ACM还这么强，他真的好成功啊，我好想和他认识</p>
+<p>aw：（见怪不怪）</p>
+<p>417：绷</p>
+</blockquote>
+<p>礼拜六热身赛，打的很顺利，最后一题似乎做过，但是总想不起来是哪里。不过还是大记忆恢复术想起了当时的做法，最后因为忘记判 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的情况导致 WA 了一发。最后还是有惊无险拿下队史第二次热身赛 AK。比赛发的三明治是真的小杯，不过二楼的日料自助不错，晚饭的自助餐也不咋地（个人感觉不如同酒店的早餐）。晚上和队友一起出去逛了一下街，尝了一下当地小吃，再看 aw 打了两把集就回酒店睡觉了。</p>
+<p>礼拜天正赛。一开始打的非常顺。tyf 一开始就开对了题，直接 8 分钟把 D 秒了，之后我跟榜看了 H 也直接推出来了结论。但是马上就开始卡题了。一开始我推出来了一个 B 的不知道对不对的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 柿子。结果我们半个小时没想出来正解，最后反而是我这个柿子硬控了全队半个小时。之后 aw 想到了一个 A 的结论。不过因为是数据结构所以写着比较慢，期间我去和 tyf 一起看 C。我们很快就看出来可以从最小环入手。我提出了一个每次删一个度数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\le</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span> 2 的节点的想法（后来和 Sooke 讨论发现这个做法其实是对的，但是要加边）我给这个做法加了很多补丁（但是到最后也没想到加边）一直疯狂爆罚时，中间我们甚至在铁牌区待了一段时间，tyf 表示当时一想到拿牌还要过两道题就红温了，而对内唯一冷静的 aw 已经在规划第五题了，因为他觉得我们俩手上的题都挺稳。</p>
+<p>不过好在我红温到极致的时候 aw 的 A 过了。直接给我狠狠的降了一下温。仔细一想发现只要让每个节点和与其连接的编号最小的节点不一样就行了。（一开始想的是第二小，仔细一想好像和最小没有本质区别）。我甚至因为数组开小了还 RE 了一发。但这个时候已经封榜了。我们继续去开 G。我们大概花了半个小时想出了正解，让 aw 一边写我们一边想一些细节处理，只可惜到最后不知道哪里写挂了，遗憾拿了个后排铜，滚完榜仔细一看 dyxg 刚好在我们前面一名，难兄难弟了属于是。</p>
+<p>打完比赛 tyf 因为要赶第二天早上的早八所以提前跑路了，晚上和 aw 还有女队的两个人一起去吃了串串。成都的油碟确实给人一种不一样的感觉。也有可能是因为成都的辣度比较高。最后一天去了熊猫培育基地，结果因为中饭吃的太慢以及 aw 中途在地铁站被拉稀硬控了导致差点没赶上飞机。最后还好是 Nanani 控了登机口半分钟才让我们极限赶上了飞机。</p>
+<p>草了，这后日谈怎么写的比本体还长。</p>
+
+        </div>
+    </body>
+</html>
+
+        <div class = "bottom">
+            <br/>
+
+            <a href = "https://user.qzone.qq.com/2312866507/infocenter">QQ</a>
+
+            <p style = "display:inline"> | </p>
+
+            <a href = "https://codeforces.com/profile/Dilute">Codeforces</a>
+
+            <p style = "display:inline"> | </p>
+
+            <a href = "https://www.luogu.com.cn/user/36362">Luogu</a>
+
+            <p style = "display:inline"> | </p>
+
+            <a href = "https://github.com/Dilute-l">Github</a> 
+
+            <br/>
+            
+            本站由 <a href = "https://hexo.io/zh-cn/"> Hexo </a> 驱动，使用 Azurus 作为主题。
+            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+        </div>
+
+    </body>
+        
+    <script>
+        function moveTop(obj, num) {
+            clearInterval(obj.timeOut)
+            obj.timeOut = setInterval(function () {
+                let step = (num - parseInt(getComputedStyle(obj, null).marginTop)) / 10
+                step = step > 0 ? Math.ceil(step) : Math.floor(step)
+                obj.style.marginTop = parseInt(getComputedStyle(obj, null).marginTop) + step + 'px';
+            },15)
+        }
+
+        let openb = document.querySelector('.openButton')
+        let close = document.querySelector('.close_button')
+        let div = document.querySelector('.menu_content')
+        let original = parseInt(getComputedStyle(div, null).marginTop)
+
+        openb.style.marginLeft = '200px'
+
+        openb.addEventListener('click',function () {
+            moveTop(div, 0)
+            moveTop(close, 0);
+        })
+
+        close.addEventListener('click', function(){
+            moveTop(div, original)
+            moveTop(close, original);
+        })
+
+        
+    </script>
+</html>

@@ -224,6 +224,10 @@
             .cover_page img{
                 width: 50%;
             }
+
+            .box{
+                margin: 50px 100px 0px 100px;
+            }
         </style>
     </head>
 
@@ -235,17 +239,20 @@
             <!-- diltue.xyz -->
         </div>
 
-        <div class="text_page">
-            <h1> 题解 CF1111C Creative Snap </h1>
-            
-                <!-- <div> 30621706 </div> -->
-                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="40%" height="86" src="//music.163.com/outchain/player?type=2&id=30621706&auto=1&height=66"></iframe>
-            
-        </div>
+        <div calss="box">
+            <div class="text_page">
+                <h1> 题解 CF1111C Creative Snap </h1>
+                
+                    <!-- <div> 30621706 </div> -->
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="40%" height="86" src="//music.163.com/outchain/player?type=2&id=30621706&auto=1&height=66"></iframe>
+                
+            </div>
+        
         
 
-        <div class="text_page">
-            <h2 id="简单递归"><a class="markdownIt-Anchor" href="#简单递归"></a> 简单递归</h2>
+        <div class="box">
+            <div class="text_page">
+                <h2 id="简单递归"><a class="markdownIt-Anchor" href="#简单递归"></a> 简单递归</h2>
 <p>首先我们如果要消灭一段区间<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[l, r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span>，我们可以有三种选择：</p>
 <ul>
 <li>如果<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">]</mo><mtext>​</mtext></mrow><annotation encoding="application/x-tex">[l, r]​</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span><span class="mord">​</span></span></span></span>区间内没人，那么直接花费<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mtext>​</mtext></mrow><annotation encoding="application/x-tex">A​</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span><span class="mord">​</span></span></span></span>的代价将这段摧毁</li>
@@ -260,8 +267,10 @@
 <p>将这个优化加上去之后复杂度就是正确的QwQ</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 2147483647</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">inp</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">int</span> neg = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">'-'</span>)</span><br><span class="line">            neg = <span class="number">-1</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">        sum = sum * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> neg * sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> pos[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">int</span> n, k, a, b;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="built_in">std</span>::upper_bound(pos + <span class="number">1</span>, pos + k + <span class="number">1</span>, r) - <span class="built_in">std</span>::lower_bound(pos + <span class="number">1</span>, pos + k + <span class="number">1</span>, l);</span><br><span class="line">    <span class="comment">// printf("cnt [%d, %d] = %d\n", l, r, cnt);</span></span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(l == r &amp;&amp; cnt != <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> (r - l + <span class="number">1</span>) * cnt * b;</span><br><span class="line">    <span class="keyword">return</span> (cnt == <span class="number">0</span>) ? a : <span class="built_in">std</span>::min((r - l + <span class="number">1</span>) * cnt * b, solve(l, mid) + solve(mid + <span class="number">1</span>, r));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n = inp();</span><br><span class="line">    k = inp();</span><br><span class="line">    a = inp();</span><br><span class="line">    b = inp();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++)</span><br><span class="line">        pos[i] = inp();</span><br><span class="line">    <span class="built_in">std</span>::sort(pos + <span class="number">1</span>, pos + k + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>, solve(<span class="number">1</span>, <span class="number">1</span> &lt;&lt; n));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </div>
-    </body>
+            </div>
+        
+
+    </div></div></body>
 </html>
 
         <div class = "bottom">

@@ -224,6 +224,10 @@
             .cover_page img{
                 width: 50%;
             }
+
+            .box{
+                margin: 50px 100px 0px 100px;
+            }
         </style>
     </head>
 
@@ -235,17 +239,20 @@
             <!-- diltue.xyz -->
         </div>
 
-        <div class="text_page">
-            <h1> 题解 洛谷P5174 圆点 </h1>
-            
-                <!-- <div> 29775810 </div> -->
-                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="40%" height="86" src="//music.163.com/outchain/player?type=2&id=29775810&auto=1&height=66"></iframe>
-            
-        </div>
+        <div calss="box">
+            <div class="text_page">
+                <h1> 题解 洛谷P5174 圆点 </h1>
+                
+                    <!-- <div> 29775810 </div> -->
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="40%" height="86" src="//music.163.com/outchain/player?type=2&id=29775810&auto=1&height=66"></iframe>
+                
+            </div>
+        
         
 
-        <div class="text_page">
-            <h2 id="题外话"><a class="markdownIt-Anchor" href="#题外话"></a> 题外话</h2>
+        <div class="box">
+            <div class="text_page">
+                <h2 id="题外话"><a class="markdownIt-Anchor" href="#题外话"></a> 题外话</h2>
 <p>我本来自己想到的的做法是跟别的大多数题解一样的</p>
 <p>但是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>J</mi><mi>C</mi><mn>00118</mn></mrow><annotation encoding="application/x-tex">LJC00118</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right:0.09618em;">J</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord">0</span><span class="mord">0</span><span class="mord">1</span><span class="mord">1</span><span class="mord">8</span></span></span></span>大仙跟我讲了他的做法，据说常数更小一些，于是我就过来发（水）题（社）解（区）了（分）。</p>
 <a id="more"></a>
@@ -273,8 +280,10 @@ $ \displaystyle\sum_{i= 1}^{\sqrt r} \left(\sum_{j = 1}^{maxj} j^2\right) + i^2 
 <h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h2>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 2147483647</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">powmod</span><span class="params">(ll a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    ll sum = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>)&#123;</span><br><span class="line">            sum *= a;</span><br><span class="line">            sum %= mod;</span><br><span class="line">        &#125;</span><br><span class="line">        a *= a;</span><br><span class="line">        a %= mod;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line">ll inv6;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">sum</span><span class="params">(ll n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (n * (n + <span class="number">1</span>) % mod * ((n &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>) % mod) * inv6 % mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    inv6 = powmod(<span class="number">6</span>, mod - <span class="number">2</span>);</span><br><span class="line">    ll r;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;r);</span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">    ll num = <span class="built_in">sqrt</span>(r) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">0</span>; i * i &lt;= r; i++)&#123;</span><br><span class="line">        <span class="keyword">while</span>(i * i + num * num &gt; r)</span><br><span class="line">            num--;</span><br><span class="line">        ans += i * i % mod * num % mod;</span><br><span class="line">        ans %= mod;</span><br><span class="line">        ans += sum(num);</span><br><span class="line">        ans %= mod;</span><br><span class="line">    &#125;</span><br><span class="line">    ans &lt;&lt;= <span class="number">2</span>;</span><br><span class="line">    ans %= mod;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </div>
-    </body>
+            </div>
+        
+
+    </div></div></body>
 </html>
 
         <div class = "bottom">

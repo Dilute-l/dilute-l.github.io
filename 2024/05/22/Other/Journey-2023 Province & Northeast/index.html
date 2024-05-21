@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dilute's Blog</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="/css/main.css">
+
+        <script src="/js/main.js"></script>
+
+        <style>
+        
+            .menu{
+                top: 0;
+                z-index:2;
+                /* background-color: #CCCCCC; */
+                position: absolute;
+                left: 0;
+                height: 100px;
+                width: 99.95%;
+            }
+
+            .openButton{
+                position: absolute;
+                right: 0;
+            }
+
+            .menu img{
+                height: 50px;
+            }
+
+            /* .menu:focus .menu_content{
+                animation: show_menu 0.3s forwards ease; 
+            }
+
+            .menu:focus .close_button{
+                animation: show_menu 0.3s forwards ease;
+            }
+
+            @keyframes show_menu{
+                0%{
+                    margin-top: -110%;
+                }
+
+                100%{
+                    margin-top: 0;
+                }
+            }
+
+            .close_button:focus+.menu_content{
+                animation: hide_menu 0.3s forwards ease;
+            }
+
+            .close_button:focus{
+                animation: hide_menu 0.3s forwards ease;
+            }
+
+            @keyframes hide_menu{
+                0%{
+                    margin-top: 0px;
+                }
+
+                100%{
+                    margin-top: -110%;
+                }
+            } */
+
+            .menu_content{
+                /* display: none; */
+                position: absolute;
+                background-color: #FFFFFF;
+                margin-top: -110%;
+                text-align: center;
+                width: 100%;
+                height: calc(100vh);
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
+            }
+
+            .close_button{
+                position: absolute;
+                right: 0;
+                margin-top: -110%;
+                height: 100px;
+                z-index: 3;
+            }
+
+            .bottom{
+                margin: 100px 100px 0 0;
+                text-align: center;
+                color: gray;
+            }
+
+            .avatar_frame{
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                border-radius: 100%;
+                overflow: hidden;
+                height: 200px;
+                width:200px;
+                position: relative;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            .avatar_frame img{
+                height: 100%;
+                width: 100%;
+            }
+
+            .avatar{
+                position: relative;
+                text-align: center;
+                height: 350px;
+                top: 50px;
+            }
+
+            .name_logo{
+                position: relative;
+                text-align: center;
+                height: 60px;
+            }
+
+            .name_logo h1{
+                color: pink;
+                font-size: 60px;
+            }
+
+            .portals{
+                position: absolute;
+                color: pink;
+                text-align: center;
+                border-radius: 25px;
+                height: 50px;
+                width: 100px;
+                border: 2px solid pink;
+                z-index: 1145114;
+                font-size: 25px;
+                line-height: 50px;
+                transition: all 0.5s
+            }
+
+            .portals:hover{
+                transition: all 0.5s;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                color: white;
+                background-color: pink;    
+            }
+
+        </style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class = "menu">
+            <div class = "openButton">
+                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+            </div>
+            <div class = "close_button">
+                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+            </div>
+            <div class = "menu_content">
+                <div class = "avatar">
+                    <div class = "avatar_frame">
+                        <img src = "https://dilute.xyz/images/avatar.png">
+                    </div>
+                    <div class = "name_logo">
+                        <h1> Dilute </h1>
+                    </div>
+                </div>
+
+                <div style = "margin-top: 50px;">
+                    <a href = "https://dilute.xyz">
+                        <div class = "portals" style = "margin-left: calc(50vw - 230px)">
+                            主页
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/archives">
+                        <div class = "portals" style = "margin-left: calc(50vw - 110px)">
+                            归档
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/friends">
+                        <div class = "portals" style = "margin-left: calc(50vw + 10px)">
+                            朋友
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/about">
+                        <div class = "portals" style = "margin-left: calc(50vw + 130px)">
+                            关于
+                        </div>
+                    </a>
+                </div>
+
+                <div style = "height: 100px"> </div>
+
+                
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=320 src="//music.163.com/outchain/player?type=0&id=7567348850&auto=1&height=430"></iframe>
+            </div> 
+       
+        </div>
+
+        <html>
+    <head><meta name="generator" content="Hexo 3.9.0">
+        <style>
+            .cover_page {
+                height: 300px;
+                /* line-height: 940px; */
+                margin: 0 auto;
+                position: relative;
+                /* z-index: -2; */
+            }
+
+            .cover_page p{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .cover_page img{
+                width: 50%;
+            }
+
+            .box{
+                margin: 50px 100px 0px 100px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="cover_page">
+            <p>
+                <a href="https://dilute.xyz"> <img src="https://dilute.xyz/images/logo.png"> </a>
+            </p>
+            <!-- diltue.xyz -->
+        </div>
+
+        <div calss="box">
+            <div class="text_page">
+                <h1> 赛季 DLC - 黑龙江省赛 & 东北四省赛 </h1>
+                
+                    <!-- <div> 2097485072 </div> -->
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="40%" height="86" src="//music.163.com/outchain/player?type=2&id=2097485072&auto=1&height=66"></iframe>
+                
+            </div>
+        
+        
+
+        <div class="box">
+            <div class="text_page">
+                <p>不知道算是旧赛季的结束还是新赛季的开始，总之每年的省赛都是这个时间点的保留节目。</p>
+<p>去年是和摇人队的老队友一起打的，毕竟去年因为一些奇奇怪怪的原因没能正式进队。要真算起来，去年的省赛才算是我 ACM 生涯的起点。仔细一想去年省赛之前的校赛我还被 tyf N + 1了，当时根本想不到这个 b 之后竟然成了我队友，赛后和他聊天说自己只有蓝名水平被念叨了一整年，没想到时间过的那么快，虽然水平变化不大，但是人际关系已经完全和从前不一样了。</p>
+<h2 id="黑龙江省赛"><a class="markdownIt-Anchor" href="#黑龙江省赛"></a> 黑龙江省赛</h2>
+<p>因为某学校的逆天操作，今年省赛被直接移到线上了，用的还是屎中屎的 pta 和 oms。感觉主办方根本没有一点对于竞赛的尊重。从去年省赛负责人在知乎上的牢骚和实际的参赛体验也能看出来，虽然明年因为校内的规矩不能打省赛了，但是感觉这个主办方还是不太指望得上了，希望可以换个主办方（<s>比如我校</s>）。</p>
+<p>这次的队名用的是 tyf 在从南京回哈尔滨路上突发奇想想到的「雪原曼舞」。</p>
+<p>第一天的热身赛我们发现是去年省赛原题之后，我随便交了一道题然后直接和 aw 上楼去打集了，后来听 tyf 说的才发现我们直接勇夺倒数第一。之前就和 tyf 和 aw 聊过，我们看了一下其他队的构成，感觉一个个都是一个人能把我们三个人一起吊起来打的，所以一致统一拿到 rank 5 就算胜利。</p>
+<p>第二天正赛，签到签的很快，但是傻卵 tyf 在给我报 F 的题意的时候没告诉我不能经过重复的点导致我一开始以为这就是个傻逼题。作为惩罚我怂恿 aw 趁着 tyf 去上厕所把原来归他写的 J 题给狠狠的 NTR 了。而且因为 aw 的妙妙技能树拿到了大数据结构 C 题的一血。G 题看到只输入一个 n 我们大胆开始猜结论，然后发现答案一定是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>X</mi></msup></mrow><annotation encoding="application/x-tex">2^{X}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8413309999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.07847em;">X</span></span></span></span></span></span></span></span></span></span></span></span>，但是猜了好久都没猜出来。期间 aw 都把 L 给过了我都还没才出来，一个个温度都有点高。最后到了封榜之后才发现原来是我把费马小定理的模数打成了 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>o</mi><mi>d</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">mod- 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 。虽然我没猜到正确结论但 tyf 之前猜到了。总的来说全程打的还是非常顺利的，破了好多队史的魔咒。拿到了第一个一血，第一次全程 0 dirt，甚至还打破了队内封榜后过不了题的魔咒。虽然从实际上来讲好像纯粹是因为我傻逼了导致本来封榜前就能过的题硬生生拖到封榜之后才能过。</p>
+<h2 id="东北四省赛"><a class="markdownIt-Anchor" href="#东北四省赛"></a> 东北四省赛</h2>
+<p>终于又能从哈尔滨跑出去打比赛了，大赢特赢！</p>
+<p>但是没出东北，而且因为统一买票不能早到迟退合理逃掉两天的课顺便多玩两天，小输。</p>
+<p>这次队名用的是一年前取队名时期的废案「天夜路明」。</p>
+<p>刚到长春还没啥感觉，但是在坐地铁到酒店（或者说我们住的可能叫招待所）旁边之后就感受到了一点小小的震撼。原来哈尔滨在东北已经算是比较发达的城市了。从招待所旁边的一条小路摸进了东师的校园之后很快就找到了比赛场地，但是在小逛了一圈去食堂看了一眼之后我和 aw 就意外——真的意外吗？好像我们俩路痴也不是一天两天了——总之是迷路了。在一致决定晚上热身赛直接不去打之后我们就开始找出去的路。在这个过程中，我们遇到了：</p>
+<ul>
+<li>
+<p>小杯导航：我和 aw 准备直接用导航找路，结果发现导航给的路上竟然有一扇<strong>锁着</strong>，他妈的<strong>锁着</strong>，还长满藤蔓的小铁门。</p>
+</li>
+<li>
+<p>准时下班保安：当我们饶了一下路，终于找到原路准备回去的时候，我们发现因为那扇小门的保安已经下班了，那个门，他锁住了。我们甚至在被锁住的门口找到了 csy 一队，但是他们要打热身赛于是就待在了学校里面。</p>
+</li>
+<li>
+<p>这扇门不能从这一侧打开：我们绕了更远的路，直接走到了旁边附中的校园里面，期间我们还奇怪为什么有个保安过来问我们是来干什么的。从结果上来看我们可能被认成了逃课的高中生（？）。然后就在附中门口看到了另外一队人，原来这扇门只让出不让进，正因如此你没资格啊你没资格。</p>
+</li>
+</ul>
+<p>晚上吃完饭看了 msi 半决赛，最后一把是边和 yyf C属性大爆发一起打一边看的，之后觉得不过瘾回房间又完整溜了一遍，甚至一遍溜一遍和 aw 讲解青钢影的机制（虽然我好像已经好久没玩过这英雄了，当年玩上单的时候这英雄玩的也不明白）。</p>
+<p>礼拜天正赛，左边的左边是烈冕号，烈冕号左边是纯真肺痒痒（也就是玩原神玩的），单一排的强度直接拉满了。开赛之后一直在跟榜开题，虽说有点磕磕绊绊但是总体非常欢乐。tyf 写 M 的时候写哈希把 base 打的比值域还小，aw 把二分的下界写错了，我写直接先读漏条件导致想复杂了，再直接忘记取模。当时连续过题的时候直接全程笑声不断，主要还是因为我们错的方式太搞笑了。</p>
+<blockquote>
+<p>哈希腐乳田宇丰，出列！</p>
+<p>二分腐乳张城玮，出列！</p>
+<p>取模腐乳卢景行，出列！</p>
+</blockquote>
+<p>不过还是有 E 题这个重量级。虽然我们其实客观上没有受到多大影响，因为我们之前 wa 都是因为一些更加逆天的问题（aw：？）比如某人在多组数据输出的时候没有换行，对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">2^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span> 取模打成了对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>m</mi><mi>a</mi><mi>x</mi><mi>k</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{maxk}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span></span>取模，这位更是重量级。不过好在我们在真的过了之后刚好看见 E 题有问题再修的 announcement  于是直接先跑路了。事实证明这个 announcement 出来的不好不晚，如果早一点我们可能就放着一个没过的提交记录跑路了。</p>
+<p>封榜之前 aw 把 H 过了，于是我们手上的题也只剩 G 一题了。G 是一个奇怪的根号分治，但是因为询问两个颜色所以要分 4 种情况讨论，小样例又太弱了所以我干脆写了个对拍，拍过了再交。事实证明这是很合理的，至少在定位问题上快了很多。但是因为我常数过大还是 T 了两发，小卡了一下常才过。最后还剩半个小时，我们看了一眼榜开始开香槟，然后 tyf 打开了贪吃蛇，成功的在我和 aw 的嘲笑下活到了结束。</p>
+<p>赛季结束了，我也把我喜欢的 MyGo 的歌都用了一遍，这个学期的比赛也都结束了。虽然竞赛的成果是圆满的，但竞赛之外的现实也是一团不可名状的抽象的状态。抽象的课表，神秘的实验室和老师，水课上的像正课，正课上的像水课，毫无用处的课程和逆天的专业。很难不让人怀疑自己平常做的事情究竟有没有意义。也许自己平常大抵是死的，只有在像打比赛这样出去的几天才能感觉自己能短暂的从泥沼一样的生活种稍稍离开一下。每次坐着火车飞机从别的地方回到这所学校，都有一种美梦结束了，应当回到现实去直面那些各种各样的操蛋问题了的感觉。tyf 说他习惯给自己很大压力。但我一个摆子实在没有资格说出这种话，只能说我的空虚感纯粹来自自己的懒惰。现在看着机房里边的老登都退役了，我自己成老登了，再过一年我也退役了，和竞赛的缘分可能也就结束了。</p>
+<p>这最后一段写的我也不知道写了点啥。也许是因为我溜大了，也有可能是因为在这个黑灯瞎火，身边又没有一点声音的晚上的环境下会让人进入一种为赋新词强说愁的奇妙心理状态吧，我也只能写完然后昏昏躺在自己的床上，想着明天的 ddl ，和我的队友们在下个美梦再见了。</p>
+
+            </div>
+        
+
+    </div></div></body>
+</html>
+
+        <div class = "bottom">
+            <br/>
+
+            <a href = "https://user.qzone.qq.com/2312866507/infocenter">QQ</a>
+
+            <p style = "display:inline"> | </p>
+
+            <a href = "https://codeforces.com/profile/Dilute">Codeforces</a>
+
+            <p style = "display:inline"> | </p>
+
+            <a href = "https://www.luogu.com.cn/user/36362">Luogu</a>
+
+            <p style = "display:inline"> | </p>
+
+            <a href = "https://github.com/Dilute-l">Github</a> 
+
+            <br/>
+            
+            本站由 <a href = "https://hexo.io/zh-cn/"> Hexo </a> 驱动，使用 Azurus 作为主题。
+            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+        </div>
+
+    </body>
+        
+    <script>
+        function moveTop(obj, num) {
+            clearInterval(obj.timeOut)
+            obj.timeOut = setInterval(function () {
+                let step = (num - parseInt(getComputedStyle(obj, null).marginTop)) / 10
+                step = step > 0 ? Math.ceil(step) : Math.floor(step)
+                obj.style.marginTop = parseInt(getComputedStyle(obj, null).marginTop) + step + 'px';
+            },15)
+        }
+
+        let openb = document.querySelector('.openButton')
+        let close = document.querySelector('.close_button')
+        let div = document.querySelector('.menu_content')
+        let original = parseInt(getComputedStyle(div, null).marginTop)
+
+        openb.style.marginLeft = '200px'
+
+        openb.addEventListener('click',function () {
+            moveTop(div, 0)
+            moveTop(close, 0);
+        })
+
+        close.addEventListener('click', function(){
+            moveTop(div, original)
+            moveTop(close, original);
+        })
+
+        
+    </script>
+</html>

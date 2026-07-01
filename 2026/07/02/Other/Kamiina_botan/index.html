@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dilute's Blog</title>
+        <meta charset="utf-8">
+
+        
+<link rel="stylesheet" href="/css/main.css">
+
+
+        
+<script src="/js/main.js"></script>
+
+
+        <style>
+        
+            .menu{
+                top: 0;
+                z-index:2;
+                /* background-color: #CCCCCC; */
+                position: absolute;
+                left: 0;
+                height: 100px;
+                width: 99.95%;
+            }
+
+            .openButton{
+                position: absolute;
+                right: 0;
+            }
+
+            .menu img{
+                height: 50px;
+            }
+
+            /* .menu:focus .menu_content{
+                animation: show_menu 0.3s forwards ease; 
+            }
+
+            .menu:focus .close_button{
+                animation: show_menu 0.3s forwards ease;
+            }
+
+            @keyframes show_menu{
+                0%{
+                    margin-top: -110%;
+                }
+
+                100%{
+                    margin-top: 0;
+                }
+            }
+
+            .close_button:focus+.menu_content{
+                animation: hide_menu 0.3s forwards ease;
+            }
+
+            .close_button:focus{
+                animation: hide_menu 0.3s forwards ease;
+            }
+
+            @keyframes hide_menu{
+                0%{
+                    margin-top: 0px;
+                }
+
+                100%{
+                    margin-top: -110%;
+                }
+            } */
+
+            .menu_content{
+                /* display: none; */
+                position: absolute;
+                background-color: #FFFFFF;
+                margin-top: -110%;
+                text-align: center;
+                width: 100%;
+                height: calc(100vh);
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
+            }
+
+            .close_button{
+                position: absolute;
+                right: 0;
+                margin-top: -110%;
+                height: 100px;
+                z-index: 3;
+            }
+
+            .bottom{
+                margin: 100px 100px 0 0;
+                text-align: center;
+                color: gray;
+            }
+
+            .avatar_frame{
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                border-radius: 100%;
+                overflow: hidden;
+                height: 200px;
+                width:200px;
+                position: relative;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            .avatar_frame img{
+                height: 100%;
+                width: 100%;
+            }
+
+            .avatar{
+                position: relative;
+                text-align: center;
+                height: 350px;
+                top: 50px;
+            }
+
+            .name_logo{
+                position: relative;
+                text-align: center;
+                height: 60px;
+            }
+
+            .name_logo h1{
+                color: pink;
+                font-size: 60px;
+            }
+
+            .portals{
+                position: absolute;
+                color: pink;
+                text-align: center;
+                border-radius: 25px;
+                height: 50px;
+                width: 100px;
+                border: 2px solid pink;
+                z-index: 1145114;
+                font-size: 25px;
+                line-height: 50px;
+                transition: all 0.5s
+            }
+
+            .portals:hover{
+                transition: all 0.5s;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                color: white;
+                background-color: pink;    
+            }
+
+        </style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <meta name="generator" content="Hexo 8.1.2"></head>
+
+    <body>
+        <div class = "menu">
+            <div class = "openButton">
+                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+            </div>
+            <div class = "close_button">
+                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+            </div>
+            <div class = "menu_content">
+                <div class = "avatar">
+                    <div class = "avatar_frame">
+                        <img src = "https://dilute.xyz/images/avatar.png">
+                    </div>
+                    <div class = "name_logo">
+                        <h1> Dilute </h1>
+                    </div>
+                </div>
+
+                <div style = "margin-top: 50px;">
+                    <a href = "https://dilute.xyz">
+                        <div class = "portals" style = "margin-left: calc(50vw - 230px)">
+                            主页
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/archives">
+                        <div class = "portals" style = "margin-left: calc(50vw - 110px)">
+                            归档
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/friends">
+                        <div class = "portals" style = "margin-left: calc(50vw + 10px)">
+                            朋友
+                        </div>
+                    </a>
+                    <a href = "https://dilute.xyz/about">
+                        <div class = "portals" style = "margin-left: calc(50vw + 130px)">
+                            关于
+                        </div>
+                    </a>
+                </div>
+
+                <div style = "height: 100px"> </div>
+
+                
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=320 src="//music.163.com/outchain/player?type=0&id=7567348850&auto=1&height=430"></iframe>
+            </div> 
+       
+        </div>
+
+        <html>
+    <head>
+        <style>
+            .cover_page {
+                height: 300px;
+                /* line-height: 940px; */
+                margin: 0 auto;
+                position: relative;
+                /* z-index: -2; */
+            }
+
+            .cover_page p{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .cover_page img{
+                width: 50%;
+            }
+
+            .box{
+                margin: 50px 100px 0px 100px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class = "cover_page">
+            <p>
+                <a href = "https://dilute.xyz"> <img src = "https://dilute.xyz/images/logo.png"> </a>
+            </p>
+            <!-- diltue.xyz -->
+        </div>
+
+        <div calss = "box">
+            <div class = "text_page">
+                <h1> 烟酒百合与_____的大学生活 </h1>
+                
+                    <!-- <div> 3363526846 </div> -->
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=40% height=86 src="//music.163.com/outchain/player?type=2&id=3363526846&auto=1&height=66"></iframe>
+                
+            </div>
+        </biv>
+        
+
+        <div class = "box">
+            <div class = "text_page">
+                <p>在看上伊那牡丹这部番的途中，就让我有很多想要表达的东西，尤其是在我看的途中夹杂着看《彻夜之歌》的时候也给我带来了很多想法。不过其中相当一部分过于私人，不太适合写到 bangumi 上面。但是又不甘心让这些思考单纯的烂在自己脑子里，和朋友之间交流也总是在很多时候一时没法想到合适的措辞来表达自己的意思，相对而言还是文字能更好地表达这些情感。突然想起来自己还有个博客，正好在 ACM 的生涯彻底结束之后这个地方就基本没有被我动过，正好趁这个机会把这个博客从一个纯粹的算法竞赛相关变成一个可以记录我各种各样的胡思乱想的地方吧。</p>
+<span id="more"></span>
+<p>但是今天太晚了，总之先写个开头，以此来督促我趁着这些想法在脑子中仍旧新鲜的时候将他们记录下来吧。</p>
+
+            </div>
+        </biv>
+
+    </body>
+</html>
+
+        <div class = "bottom">
+            <br/>
+
+            <a href = "https://user.qzone.qq.com/2312866507/infocenter">QQ</a>
+
+            <p style = "display:inline"> | </p>
+
+            <a href = "https://codeforces.com/profile/Dilute">Codeforces</a>
+
+            <p style = "display:inline"> | </p>
+
+            <a href = "https://www.luogu.com.cn/user/36362">Luogu</a>
+
+            <p style = "display:inline"> | </p>
+
+            <a href = "https://github.com/Dilute-l">Github</a> 
+
+            <br/>
+            
+            本站由 <a href = "https://hexo.io/zh-cn/"> Hexo </a> 驱动，使用 Azurus 作为主题。
+            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+        </div>
+
+    </body>
+        
+    <script>
+        function moveTop(obj, num) {
+            clearInterval(obj.timeOut)
+            obj.timeOut = setInterval(function () {
+                let step = (num - parseInt(getComputedStyle(obj, null).marginTop)) / 10
+                step = step > 0 ? Math.ceil(step) : Math.floor(step)
+                obj.style.marginTop = parseInt(getComputedStyle(obj, null).marginTop) + step + 'px';
+            },15)
+        }
+
+        let openb = document.querySelector('.openButton')
+        let close = document.querySelector('.close_button')
+        let div = document.querySelector('.menu_content')
+        let original = parseInt(getComputedStyle(div, null).marginTop)
+
+        openb.style.marginLeft = '200px'
+
+        openb.addEventListener('click',function () {
+            moveTop(div, 0)
+            moveTop(close, 0);
+        })
+
+        close.addEventListener('click', function(){
+            moveTop(div, original)
+            moveTop(close, original);
+        })
+
+        
+    </script>
+</html>

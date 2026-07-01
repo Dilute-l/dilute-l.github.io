@@ -584,7 +584,7 @@ shamelessly uses ES6 features all over the place, courtesy of <a href="https://g
 <ul>
 <li>ES6 features in JavaScript are better supported now by <a href="https://github.com/Justineo">Gu Yiling</a>.</li>
 <li>Swift now recognizes body-less method definitions.</li>
-<li>Single expression functions <code>def foo, do: ... </code> now work in Elixir.</li>
+<li>Single expression functions <code>def foo, do: ...</code> now work in Elixir.</li>
 <li>More uniform detection of built-in classes in Objective C.</li>
 <li>Fixes for number literals and processor directives in Rust.</li>
 <li>HTML <code>&lt;script&gt;</code> tag now allows any language, not just JavaScript.</li>
@@ -732,10 +732,10 @@ README is left intact.</p>
 people’s stylesheets. If you were using an older version, you might still want<br />
 the previous behavior, but still want to upgrade. To suppress this new<br />
 behavior, you would initialize like so:</p>
-<pre class="highlight"><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript">
-  hljs.<span class="hljs-title function_">configure</span>({<span class="hljs-attr">classPrefix</span>: <span class="hljs-string">&#x27;&#x27;</span>});
-  hljs.<span class="hljs-title function_">initHighlightingOnLoad</span>();
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<pre class="highlight"><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="actionscript">
+  hljs.configure({classPrefix: <span class="string">''</span>});
+  hljs.initHighlightingOnLoad();
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
 </code></pre>
 </li>
 <li>

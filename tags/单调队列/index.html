@@ -161,15 +161,15 @@
     <body>
         <div class = "menu">
             <div class = "openButton">
-                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+                <img src = "/images/MENU-OPEN.png">
             </div>
             <div class = "close_button">
-                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+                <img src = "/images/MENU-CLOSE.png">
             </div>
             <div class = "menu_content">
                 <div class = "avatar">
                     <div class = "avatar_frame">
-                        <img src = "https://dilute.xyz/images/avatar.png">
+                        <img src = "/images/avatar.png">
                     </div>
                     <div class = "name_logo">
                         <h1> Dilute </h1>
@@ -177,22 +177,22 @@
                 </div>
 
                 <div style = "margin-top: 50px;">
-                    <a href = "https://dilute.xyz">
+                    <a href = "/">
                         <div class = "portals" style = "margin-left: calc(50vw - 230px)">
                             主页
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/archives">
+                    <a href = "/archives">
                         <div class = "portals" style = "margin-left: calc(50vw - 110px)">
                             归档
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/friends">
+                    <a href = "/friends">
                         <div class = "portals" style = "margin-left: calc(50vw + 10px)">
                             朋友
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/about">
+                    <a href = "/about">
                         <div class = "portals" style = "margin-left: calc(50vw + 130px)">
                             关于
                         </div>
@@ -209,24 +209,124 @@
 
         <div class="box">
     <style>
-        .placeholder_page {
-            margin: 100px 100px 0 100px;
-            padding: 30px;
+        .tc_head {
+            margin: 60px 100px 0 100px;
             text-align: center;
             color: gray;
+        }
+
+        .tc_head h1 {
+            color: pink;
+            font-size: 40px;
+            margin: 0 0 10px 0;
+        }
+
+        .tc_list {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .tc_list a {
+            display: inline-block;
+            margin: 8px;
+            padding: 5px 15px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .tc_list a:hover {
+            background-color: pink;
+            color: white;
+        }
+
+        .tc_list .count {
+            color: gray;
+        }
+
+        .post_page {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             line-height: 40px;
         }
 
-        .placeholder_page h1 {
+        .post_page h1 {
             color: rgb(27, 195, 251);
+            margin: 0;
+        }
+
+        .post_page .date {
+            color: gray;
+            margin-top: 5px;
+        }
+
+        .post_page a {
+            text-decoration: none;
+        }
+
+        .post_page a:hover {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            margin: 50px 0 30px 0;
+            text-align: center;
+            color: gray;
+        }
+
+        .pagination a,
+        .pagination .current,
+        .pagination .space {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 5px 13px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+        }
+
+        .pagination .current {
+            background-color: pink;
+            color: white;
+        }
+
+        .pagination a:hover {
+            background-color: pink;
+            color: white;
         }
     </style>
 
-    <div class="placeholder_page">
-        <h1></h1>
-        <p>这里暂时是空白的，施工中……</p>
-    </div>
+    
+        
+        
+
+        <div class="tc_head">
+            <h1>单调队列</h1>
+            <p>共 1 篇文章</p>
+        </div>
+
+        
+            <div class="post_page">
+                <a href="/2018/09/27/Notes/dandiao-queue/"><h1>算法学习笔记-单调队列</h1></a>
+                <div class="date">September 27, 2018</div>
+                <hr>
+                <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>单调队列一种非常经典的将O(n^2)的DP优化的O(n log n)的方式，在一个点可以更新一个范围的时候可以发挥很大作用。</p>
+<p>记得当年NOIp2017我考PJ（那年的T4考到了单调队列），当时还不会，在考后听教练讲了一遍之后仍旧处于懵逼状态，大概1个月前照着题解打了一遍，但是到了现在已经忘得差不多了QwQ，于是写了一遍优化过的多重背包来练练手。</p>
+            </div>
+        
+
+        <div class="pagination">
+            <span class="page-number current">1</span>
+        </div>
+    
 </div>
 
 

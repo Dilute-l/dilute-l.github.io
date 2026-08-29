@@ -161,15 +161,15 @@
     <body>
         <div class = "menu">
             <div class = "openButton">
-                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+                <img src = "/images/MENU-OPEN.png">
             </div>
             <div class = "close_button">
-                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+                <img src = "/images/MENU-CLOSE.png">
             </div>
             <div class = "menu_content">
                 <div class = "avatar">
                     <div class = "avatar_frame">
-                        <img src = "https://dilute.xyz/images/avatar.png">
+                        <img src = "/images/avatar.png">
                     </div>
                     <div class = "name_logo">
                         <h1> Dilute </h1>
@@ -177,22 +177,22 @@
                 </div>
 
                 <div style = "margin-top: 50px;">
-                    <a href = "https://dilute.xyz">
+                    <a href = "/">
                         <div class = "portals" style = "margin-left: calc(50vw - 230px)">
                             主页
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/archives">
+                    <a href = "/archives">
                         <div class = "portals" style = "margin-left: calc(50vw - 110px)">
                             归档
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/friends">
+                    <a href = "/friends">
                         <div class = "portals" style = "margin-left: calc(50vw + 10px)">
                             朋友
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/about">
+                    <a href = "/about">
                         <div class = "portals" style = "margin-left: calc(50vw + 130px)">
                             关于
                         </div>
@@ -209,24 +209,157 @@
 
         <div class="box">
     <style>
-        .placeholder_page {
-            margin: 100px 100px 0 100px;
-            padding: 30px;
+        .tc_head {
+            margin: 60px 100px 0 100px;
             text-align: center;
             color: gray;
+        }
+
+        .tc_head h1 {
+            color: pink;
+            font-size: 40px;
+            margin: 0 0 10px 0;
+        }
+
+        .tc_list {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .tc_list a {
+            display: inline-block;
+            margin: 8px;
+            padding: 5px 15px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .tc_list a:hover {
+            background-color: pink;
+            color: white;
+        }
+
+        .tc_list .count {
+            color: gray;
+        }
+
+        .post_page {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             line-height: 40px;
         }
 
-        .placeholder_page h1 {
+        .post_page h1 {
             color: rgb(27, 195, 251);
+            margin: 0;
+        }
+
+        .post_page .date {
+            color: gray;
+            margin-top: 5px;
+        }
+
+        .post_page a {
+            text-decoration: none;
+        }
+
+        .post_page a:hover {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            margin: 50px 0 30px 0;
+            text-align: center;
+            color: gray;
+        }
+
+        .pagination a,
+        .pagination .current,
+        .pagination .space {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 5px 13px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+        }
+
+        .pagination .current {
+            background-color: pink;
+            color: white;
+        }
+
+        .pagination a:hover {
+            background-color: pink;
+            color: white;
         }
     </style>
 
-    <div class="placeholder_page">
-        <h1></h1>
-        <p>这里暂时是空白的，施工中……</p>
-    </div>
+    
+        
+        
+
+        <div class="tc_head">
+            <h1>线段树</h1>
+            <p>共 4 篇文章</p>
+        </div>
+
+        
+            <div class="post_page">
+                <a href="/2019/09/01/Solutions/Solution-CF498D/"><h1>题解 CF498D Traffic Jams in the Land</h1></a>
+                <div class="date">September 1, 2019</div>
+                <hr>
+                <h2 id="线段树"><a class="markdownIt-Anchor" href="#线段树"></a> 线段树</h2>
+<p>首先观察数据范围，发现<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>≤</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">a_i \le6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7859700000000001em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span>，这个是一个非常有用的性质。</p>
+<p>发现<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>6</mn><mo stretchy="false">)</mo><mo>=</mo><mn>60</mn></mrow><annotation encoding="application/x-tex">\mathrm{lcm}(1, 2, 3, 4, 5, 6)=60</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">l</span><span class="mord mathrm">c</span><span class="mord mathrm">m</span></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">6</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">0</span></span></span></span>，这个数有一个非常优美的性质：把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span>再<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace></mspace><mspace width="0.6666666666666666em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mtext> </mtext><mn>60</mn></mrow><annotation encoding="application/x-tex">\mod 60</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.6666666666666666em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">6</span><span class="mord">0</span></span></span></span>意义下进行不会影响结果的正确性。</p>
+            </div>
+        
+            <div class="post_page">
+                <a href="/2019/06/03/Solutions/Solution-CF240F/"><h1>题解 CF240F TorCoder</h1></a>
+                <div class="date">June 3, 2019</div>
+                <hr>
+                <h2 id="线段树乱搞"><a class="markdownIt-Anchor" href="#线段树乱搞"></a> 线段树乱搞</h2>
+<p>考虑如果要重排一段区间使得它是回文的是可行的</p>
+<p>首先对这段区间的长度分类讨论</p>
+            </div>
+        
+            <div class="post_page">
+                <a href="/2019/03/29/Solutions/Solution-CF343D/"><h1>题解 CF343D Water Tree</h1></a>
+                <div class="date">March 29, 2019</div>
+                <hr>
+                <h2 id="似乎莫得人是不用树剖的w"><a class="markdownIt-Anchor" href="#似乎莫得人是不用树剖的w"></a> 似乎莫得人是不用树剖的w</h2>
+<p><s>但是为什么的一只<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\log</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span></span></span></span>乱搞被树剖的两只<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\log</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span></span></span></span>爆踩啊</s></p>
+<p><s>是因为我实现的太丑了吗</s></p>
+<p>不管了直接讲做法好了</p>
+            </div>
+        
+            <div class="post_page">
+                <a href="/2019/02/26/Solutions/Solution-CF452F/"><h1>题解 CF452F Permutation</h1></a>
+                <div class="date">February 26, 2019</div>
+                <hr>
+                <h2 id="又双叒叕是题外话"><a class="markdownIt-Anchor" href="#又双叒叕是题外话"></a> 又双叒叕是题外话</h2>
+<p>今天模拟考是原题大战。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>1</mn><mi mathvariant="normal">​</mi></mrow><annotation encoding="application/x-tex">T1​</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">1</span><span class="mord">​</span></span></span></span>是这题。<br />
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">T2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">2</span></span></span></span>是某次<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>F</mi><mtext> </mtext><mi>D</mi><mi>i</mi><mi>v</mi><mn>1</mn><mtext> </mtext><mi>E</mi></mrow><annotation encoding="application/x-tex">CF\ Div1\ E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord">1</span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span>题。<br />
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>3</mn><mi mathvariant="normal">​</mi></mrow><annotation encoding="application/x-tex">T3​</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">3</span><span class="mord">​</span></span></span></span>反正是某道神仙题。</p>
+<p><s>像我这样的菜鸡只能来做做<strong>相对</strong>可做的T1</s></p>
+<p><s>虽然只是相对可做但是还是被全场切穿了啊喂</s></p>
+<p><s>内心OS：这个不订正的理由真的nice</s></p>
+            </div>
+        
+
+        <div class="pagination">
+            <span class="page-number current">1</span>
+        </div>
+    
 </div>
 
 

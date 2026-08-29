@@ -161,15 +161,15 @@
     <body>
         <div class = "menu">
             <div class = "openButton">
-                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+                <img src = "/images/MENU-OPEN.png">
             </div>
             <div class = "close_button">
-                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+                <img src = "/images/MENU-CLOSE.png">
             </div>
             <div class = "menu_content">
                 <div class = "avatar">
                     <div class = "avatar_frame">
-                        <img src = "https://dilute.xyz/images/avatar.png">
+                        <img src = "/images/avatar.png">
                     </div>
                     <div class = "name_logo">
                         <h1> Dilute </h1>
@@ -177,22 +177,22 @@
                 </div>
 
                 <div style = "margin-top: 50px;">
-                    <a href = "https://dilute.xyz">
+                    <a href = "/">
                         <div class = "portals" style = "margin-left: calc(50vw - 230px)">
                             主页
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/archives">
+                    <a href = "/archives">
                         <div class = "portals" style = "margin-left: calc(50vw - 110px)">
                             归档
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/friends">
+                    <a href = "/friends">
                         <div class = "portals" style = "margin-left: calc(50vw + 10px)">
                             朋友
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/about">
+                    <a href = "/about">
                         <div class = "portals" style = "margin-left: calc(50vw + 130px)">
                             关于
                         </div>
@@ -209,24 +209,129 @@
 
         <div class="box">
     <style>
-        .placeholder_page {
-            margin: 100px 100px 0 100px;
-            padding: 30px;
+        .tc_head {
+            margin: 60px 100px 0 100px;
             text-align: center;
             color: gray;
+        }
+
+        .tc_head h1 {
+            color: pink;
+            font-size: 40px;
+            margin: 0 0 10px 0;
+        }
+
+        .tc_list {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .tc_list a {
+            display: inline-block;
+            margin: 8px;
+            padding: 5px 15px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .tc_list a:hover {
+            background-color: pink;
+            color: white;
+        }
+
+        .tc_list .count {
+            color: gray;
+        }
+
+        .post_page {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             line-height: 40px;
         }
 
-        .placeholder_page h1 {
+        .post_page h1 {
             color: rgb(27, 195, 251);
+            margin: 0;
+        }
+
+        .post_page .date {
+            color: gray;
+            margin-top: 5px;
+        }
+
+        .post_page a {
+            text-decoration: none;
+        }
+
+        .post_page a:hover {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            margin: 50px 0 30px 0;
+            text-align: center;
+            color: gray;
+        }
+
+        .pagination a,
+        .pagination .current,
+        .pagination .space {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 5px 13px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+        }
+
+        .pagination .current {
+            background-color: pink;
+            color: white;
+        }
+
+        .pagination a:hover {
+            background-color: pink;
+            color: white;
         }
     </style>
 
-    <div class="placeholder_page">
-        <h1></h1>
-        <p>这里暂时是空白的，施工中……</p>
-    </div>
+    
+        
+        
+
+        <div class="tc_head">
+            <h1>分块</h1>
+            <p>共 1 篇文章</p>
+        </div>
+
+        
+            <div class="post_page">
+                <a href="/2019/07/21/Solutions/Solution-CF1178G/"><h1>题解 CF1178G The Awesomest Vertex</h1></a>
+                <div class="date">July 21, 2019</div>
+                <hr>
+                <h3 id="分块-斜率优化"><a class="markdownIt-Anchor" href="#分块-斜率优化"></a> 分块 + 斜率优化</h3>
+<p><s>G真的比F2清真</s></p>
+<p>首先，看到树上 + 子树操作，第一反应使用dfs序拍平。</p>
+<p>那么这个问题就变成了支持：</p>
+<ul>
+<li>区间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>+</mo><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">a_i += x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">+</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span></li>
+<li>询问区间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>max</mi><mo>⁡</mo><mo stretchy="false">{</mo><mi mathvariant="normal">∣</mi><msub><mi>a</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mo>∗</mo><mi mathvariant="normal">∣</mi><msub><mi>b</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\max\{|a_i| * |b_i|\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord">∣</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span><span class="mclose">}</span></span></span></span></li>
+</ul>
+            </div>
+        
+
+        <div class="pagination">
+            <span class="page-number current">1</span>
+        </div>
+    
 </div>
 
 

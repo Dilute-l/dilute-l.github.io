@@ -161,15 +161,15 @@
     <body>
         <div class = "menu">
             <div class = "openButton">
-                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+                <img src = "/images/MENU-OPEN.png">
             </div>
             <div class = "close_button">
-                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+                <img src = "/images/MENU-CLOSE.png">
             </div>
             <div class = "menu_content">
                 <div class = "avatar">
                     <div class = "avatar_frame">
-                        <img src = "https://dilute.xyz/images/avatar.png">
+                        <img src = "/images/avatar.png">
                     </div>
                     <div class = "name_logo">
                         <h1> Dilute </h1>
@@ -177,22 +177,22 @@
                 </div>
 
                 <div style = "margin-top: 50px;">
-                    <a href = "https://dilute.xyz">
+                    <a href = "/">
                         <div class = "portals" style = "margin-left: calc(50vw - 230px)">
                             主页
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/archives">
+                    <a href = "/archives">
                         <div class = "portals" style = "margin-left: calc(50vw - 110px)">
                             归档
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/friends">
+                    <a href = "/friends">
                         <div class = "portals" style = "margin-left: calc(50vw + 10px)">
                             朋友
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/about">
+                    <a href = "/about">
                         <div class = "portals" style = "margin-left: calc(50vw + 130px)">
                             关于
                         </div>
@@ -209,24 +209,124 @@
 
         <div class="box">
     <style>
-        .placeholder_page {
-            margin: 100px 100px 0 100px;
-            padding: 30px;
+        .tc_head {
+            margin: 60px 100px 0 100px;
             text-align: center;
             color: gray;
+        }
+
+        .tc_head h1 {
+            color: pink;
+            font-size: 40px;
+            margin: 0 0 10px 0;
+        }
+
+        .tc_list {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .tc_list a {
+            display: inline-block;
+            margin: 8px;
+            padding: 5px 15px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .tc_list a:hover {
+            background-color: pink;
+            color: white;
+        }
+
+        .tc_list .count {
+            color: gray;
+        }
+
+        .post_page {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             line-height: 40px;
         }
 
-        .placeholder_page h1 {
+        .post_page h1 {
             color: rgb(27, 195, 251);
+            margin: 0;
+        }
+
+        .post_page .date {
+            color: gray;
+            margin-top: 5px;
+        }
+
+        .post_page a {
+            text-decoration: none;
+        }
+
+        .post_page a:hover {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            margin: 50px 0 30px 0;
+            text-align: center;
+            color: gray;
+        }
+
+        .pagination a,
+        .pagination .current,
+        .pagination .space {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 5px 13px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+        }
+
+        .pagination .current {
+            background-color: pink;
+            color: white;
+        }
+
+        .pagination a:hover {
+            background-color: pink;
+            color: white;
         }
     </style>
 
-    <div class="placeholder_page">
-        <h1></h1>
-        <p>这里暂时是空白的，施工中……</p>
-    </div>
+    
+        
+        
+
+        <div class="tc_head">
+            <h1>倍增</h1>
+            <p>共 1 篇文章</p>
+        </div>
+
+        
+            <div class="post_page">
+                <a href="/2018/08/21/Solutions/Solution-CF702E/"><h1>题解 CF702E Analysis of Pathes in Functional Graph</h1></a>
+                <div class="date">August 21, 2018</div>
+                <hr>
+                <h2 id="一道非常好的练倍增的题目"><a class="markdownIt-Anchor" href="#一道非常好的练倍增的题目"></a> 一道非常好的练倍增的题目</h2>
+<p>思路很简单，就是倍增处理出每个点往后<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">2^i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span></span></span></span></span></span></span>个点的路径权值和与最小值，同时要注意一下<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi mathvariant="normal">​</mi></mrow><annotation encoding="application/x-tex">k​</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord">​</span></span></span></span>要用<code>longlong</code>存，否则会挂掉</p>
+<p>如果不会倍增的右转百度找其他博客去吧……我这里就不赘述了</p>
+            </div>
+        
+
+        <div class="pagination">
+            <span class="page-number current">1</span>
+        </div>
+    
 </div>
 
 

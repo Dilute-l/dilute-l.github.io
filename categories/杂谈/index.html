@@ -161,15 +161,15 @@
     <body>
         <div class = "menu">
             <div class = "openButton">
-                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+                <img src = "/images/MENU-OPEN.png">
             </div>
             <div class = "close_button">
-                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+                <img src = "/images/MENU-CLOSE.png">
             </div>
             <div class = "menu_content">
                 <div class = "avatar">
                     <div class = "avatar_frame">
-                        <img src = "https://dilute.xyz/images/avatar.png">
+                        <img src = "/images/avatar.png">
                     </div>
                     <div class = "name_logo">
                         <h1> Dilute </h1>
@@ -177,22 +177,22 @@
                 </div>
 
                 <div style = "margin-top: 50px;">
-                    <a href = "https://dilute.xyz">
+                    <a href = "/">
                         <div class = "portals" style = "margin-left: calc(50vw - 230px)">
                             主页
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/archives">
+                    <a href = "/archives">
                         <div class = "portals" style = "margin-left: calc(50vw - 110px)">
                             归档
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/friends">
+                    <a href = "/friends">
                         <div class = "portals" style = "margin-left: calc(50vw + 10px)">
                             朋友
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/about">
+                    <a href = "/about">
                         <div class = "portals" style = "margin-left: calc(50vw + 130px)">
                             关于
                         </div>
@@ -209,24 +209,122 @@
 
         <div class="box">
     <style>
-        .placeholder_page {
-            margin: 100px 100px 0 100px;
-            padding: 30px;
+        .tc_head {
+            margin: 60px 100px 0 100px;
             text-align: center;
             color: gray;
+        }
+
+        .tc_head h1 {
+            color: pink;
+            font-size: 40px;
+            margin: 0 0 10px 0;
+        }
+
+        .tc_list {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .tc_list a {
+            display: inline-block;
+            margin: 8px;
+            padding: 5px 15px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .tc_list a:hover {
+            background-color: pink;
+            color: white;
+        }
+
+        .tc_list .count {
+            color: gray;
+        }
+
+        .post_page {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             line-height: 40px;
         }
 
-        .placeholder_page h1 {
+        .post_page h1 {
             color: rgb(27, 195, 251);
+            margin: 0;
+        }
+
+        .post_page .date {
+            color: gray;
+            margin-top: 5px;
+        }
+
+        .post_page a {
+            text-decoration: none;
+        }
+
+        .post_page a:hover {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            margin: 50px 0 30px 0;
+            text-align: center;
+            color: gray;
+        }
+
+        .pagination a,
+        .pagination .current,
+        .pagination .space {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 5px 13px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+        }
+
+        .pagination .current {
+            background-color: pink;
+            color: white;
+        }
+
+        .pagination a:hover {
+            background-color: pink;
+            color: white;
         }
     </style>
 
-    <div class="placeholder_page">
-        <h1></h1>
-        <p>这里暂时是空白的，施工中……</p>
-    </div>
+    
+        
+        
+
+        <div class="tc_head">
+            <h1>杂谈</h1>
+            <p>共 1 篇文章</p>
+        </div>
+
+        
+            <div class="post_page">
+                <a href="/2026/07/02/Other/Kamiina_botan/"><h1>烟酒百合与_____的大学生活</h1></a>
+                <div class="date">July 2, 2026</div>
+                <hr>
+                <p>在看上伊那牡丹这部番的途中，就让我有很多想要表达的东西，尤其是在我看的途中夹杂着看《彻夜之歌》的时候也给我带来了很多想法。不过其中相当一部分过于私人，不太适合写到 bangumi 上面。但是又不甘心让这些思考单纯的烂在自己脑子里，和朋友之间交流也总是在很多时候一时没法想到合适的措辞来表达自己的意思，相对而言还是文字能更好地表达这些情感。突然想起来自己还有个博客，正好在 ACM 的生涯彻底结束之后这个地方就基本没有被我动过，正好趁这个机会把这个博客从一个纯粹的算法竞赛相关变成一个可以记录我各种各样的胡思乱想的地方吧。</p>
+            </div>
+        
+
+        <div class="pagination">
+            <span class="page-number current">1</span>
+        </div>
+    
 </div>
 
 

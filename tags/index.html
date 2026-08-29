@@ -161,15 +161,15 @@
     <body>
         <div class = "menu">
             <div class = "openButton">
-                <img src = "https://dilute.xyz/images/MENU-OPEN.png">
+                <img src = "/images/MENU-OPEN.png">
             </div>
             <div class = "close_button">
-                <img src = "https://dilute.xyz/images/MENU-CLOSE.png">
+                <img src = "/images/MENU-CLOSE.png">
             </div>
             <div class = "menu_content">
                 <div class = "avatar">
                     <div class = "avatar_frame">
-                        <img src = "https://dilute.xyz/images/avatar.png">
+                        <img src = "/images/avatar.png">
                     </div>
                     <div class = "name_logo">
                         <h1> Dilute </h1>
@@ -177,22 +177,22 @@
                 </div>
 
                 <div style = "margin-top: 50px;">
-                    <a href = "https://dilute.xyz">
+                    <a href = "/">
                         <div class = "portals" style = "margin-left: calc(50vw - 230px)">
                             主页
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/archives">
+                    <a href = "/archives">
                         <div class = "portals" style = "margin-left: calc(50vw - 110px)">
                             归档
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/friends">
+                    <a href = "/friends">
                         <div class = "portals" style = "margin-left: calc(50vw + 10px)">
                             朋友
                         </div>
                     </a>
-                    <a href = "https://dilute.xyz/about">
+                    <a href = "/about">
                         <div class = "portals" style = "margin-left: calc(50vw + 130px)">
                             关于
                         </div>
@@ -207,1190 +207,190 @@
        
         </div>
 
-        <html>
-    <head>
-        <style>
-            .cover_page {
-                height: 300px;
-                /* line-height: 940px; */
-                margin: 0 auto;
-                position: relative;
-                /* z-index: -2; */
-            }
+        <div class="box">
+    <style>
+        .tc_head {
+            margin: 60px 100px 0 100px;
+            text-align: center;
+            color: gray;
+        }
 
-            .cover_page p{
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-            }
+        .tc_head h1 {
+            color: pink;
+            font-size: 40px;
+            margin: 0 0 10px 0;
+        }
 
-            .cover_page img{
-                width: 50%;
-            }
+        .tc_list {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            line-height: 40px;
+        }
 
-            .archive_page{
-                margin: 0px 0px 0px 0px;
-                padding: 10px 40px 10px 40px;
-                /* box-shadow: 20px -20px 10px 0px rgba(0, 0, 0, 0.2); */
-                line-height: 40px;
-                border: 0.5px solid rgba(0, 0, 0, 0.2);
-                transition: box-shadow 0.5s;
-                /* color: black; */
-                /* transition: all 0.5s; */
-                /* box-shadow: 30px 30px 30px 30px rgba(0, 0, 0, 0.2); */
-            }
+        .tc_list a {
+            display: inline-block;
+            margin: 8px;
+            padding: 5px 15px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
 
-            .archive_page:hover{
-                transition: box-shadow 0.5s;
-                box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.2);
-            }
+        .tc_list a:hover {
+            background-color: pink;
+            color: white;
+        }
 
-            .whole_archive{
-                box-shadow: 30px 30px 30px 30px rgba(0, 0, 0, 0.2);
-                margin: 100px 100px 0px 100px;
-                padding: 0px 0px 0px 0px;
-            }
-        </style>
-    </head>
+        .tc_list .count {
+            color: gray;
+        }
 
-    <body>
-        <div class = "cover_page">
-            <p>
-                <a href = "https://dilute.xyz"> <img src = "https://dilute.xyz/images/logo.png"> </a>
-            </p>
-            <!-- diltue.xyz -->
+        .post_page {
+            margin: 30px 100px 0 100px;
+            padding: 30px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            line-height: 40px;
+        }
+
+        .post_page h1 {
+            color: rgb(27, 195, 251);
+            margin: 0;
+        }
+
+        .post_page .date {
+            color: gray;
+            margin-top: 5px;
+        }
+
+        .post_page a {
+            text-decoration: none;
+        }
+
+        .post_page a:hover {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            margin: 50px 0 30px 0;
+            text-align: center;
+            color: gray;
+        }
+
+        .pagination a,
+        .pagination .current,
+        .pagination .space {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 5px 13px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            color: pink;
+            text-decoration: none;
+        }
+
+        .pagination .current {
+            background-color: pink;
+            color: white;
+        }
+
+        .pagination a:hover {
+            background-color: pink;
+            color: white;
+        }
+    </style>
+
+    
+        <div class="tc_head">
+            <h1>所有标签</h1>
+            <p>共 38 个标签</p>
         </div>
 
-
-        
-        
-        <div class = "whole_archive">
+        <div class="tc_list">
             
-                    
-                
-                    <div class = "archive_page">
-                        <h2> 2026</h2>
-                    </div>
-
-                    <!-- <hr> -->
-                
-
-                <a href="/2026/07/02/Other/Kamiina_botan/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> July 2, 2026 </p> 
-                            
-                            烟酒百合与_____的大学生活
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/DP/">DP <span class="count">(11)</span></a>
             
-                    
-                
-                    <div class = "archive_page">
-                        <h2> 2024</h2>
-                    </div>
-
-                    <!-- <hr> -->
-                
-
-                <a href="/2024/05/22/Other/Journey-2023 Province & Northeast/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> May 22, 2024 </p> 
-                            
-                            赛季 DLC - 黑龙江省赛 & 东北四省赛
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构 <span class="count">(7)</span></a>
             
-                    
-                
-
-                <a href="/2024/04/07/Other/Journey-Conclusion/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> April 7, 2024 </p> 
-                            
-                            赛季总结 —— Dilute ver. & 后日谈
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E5%93%88%E5%B8%8C/">哈希 <span class="count">(5)</span></a>
             
-                    
-                
-                    <div class = "archive_page">
-                        <h2> 2023</h2>
-                    </div>
-
-                    <!-- <hr> -->
-                
-
-                <a href="/2023/11/16/Other/Journey-2023CCPCShenzhen/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> November 16, 2023 </p> 
-                            
-                            2023 CCPC 深圳站游记 with ZhangCW & skytyf
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树 <span class="count">(4)</span></a>
             
-                    
-                
-
-                <a href="/2023/11/07/Other/Journey-2023ICPCNanjing/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> November 7, 2023 </p> 
-                            
-                            2023 ICPC 南京站游记 with ZhangCW & skytyf
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E7%9E%8E%E5%86%99/">瞎写 <span class="count">(3)</span></a>
             
-                    
-                
-
-                <a href="/2023/08/16/Other/Journey-Chongqing/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> August 16, 2023 </p> 
-                            
-                            「火锅旅梦」 with. dyxg & Sooke
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串 <span class="count">(3)</span></a>
             
-                    
-                
-
-                <a href="/2023/02/24/Solutions/Solution-CF1793E/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> February 24, 2023 </p> 
-                            
-                            题解 CF1793E Velepin and Marketing
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E9%AA%97%E5%88%86/">骗分 <span class="count">(3)</span></a>
             
-                    
-                
-                    <div class = "archive_page">
-                        <h2> 2022</h2>
-                    </div>
-
-                    <!-- <hr> -->
-                
-
-                <a href="/2022/08/01/Other/ACM-Journal/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> August 1, 2022 </p> 
-                            
-                            ACM Journal
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/">网络流 <span class="count">(2)</span></a>
             
-                    
-                
-                    <div class = "archive_page">
-                        <h2> 2020</h2>
-                    </div>
-
-                    <!-- <hr> -->
-                
-
-                <a href="/2020/02/24/Solutions/Solution-CF1314D/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> February 24, 2020 </p> 
-                            
-                            题解 CF1314D Tourism
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E8%B4%B9%E7%94%A8%E6%B5%81/">费用流 <span class="count">(2)</span></a>
             
-                    
-                
-
-                <a href="/2020/01/12/Solutions/Solution-CF1286C/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> January 12, 2020 </p> 
-                            
-                            题解 CF1286C Madhouse
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E4%BA%8C%E5%88%86/">二分 <span class="count">(2)</span></a>
             
-                    
-                
-                    <div class = "archive_page">
-                        <h2> 2019</h2>
-                    </div>
-
-                    <!-- <hr> -->
-                
-
-                <a href="/2019/09/01/Solutions/Solution-CF498D/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> September 1, 2019 </p> 
-                            
-                            题解 CF498D Traffic Jams in the Land
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E6%95%B0%E8%AE%BA%EF%BC%8C%E6%95%B0%E5%AD%A6/">数论，数学 <span class="count">(2)</span></a>
             
-                    
-                
-
-                <a href="/2019/07/21/Solutions/Solution-CF1178G/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> July 21, 2019 </p> 
-                            
-                            题解 CF1178G The Awesomest Vertex
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/STL/">STL <span class="count">(2)</span></a>
             
-                    
-                
-
-                <a href="/2019/06/27/Solutions/Solution-CF1183H/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> June 27, 2019 </p> 
-                            
-                            题解 CF1183H Subsequences (hard version)
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E9%9D%9E%E4%BC%A0%E7%BB%9F%E9%A2%98/">非传统题 <span class="count">(2)</span></a>
             
-                    
-                
-
-                <a href="/2019/06/03/Solutions/Solution-CF240F/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> June 3, 2019 </p> 
-                            
-                            题解 CF240F TorCoder
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">单调队列 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/05/28/Solutions/Solution-CF1051E/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> May 28, 2019 </p> 
-                            
-                            题解 CF1051E Vasya and Big Integers
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/">平衡树 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/05/08/Solutions/Solution-CF15D/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> May 8, 2019 </p> 
-                            
-                            题解 CF15D Map
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E6%B8%B8%E8%AE%B0/">游记 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/04/27/Other/ZJOI2019-Journey/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> April 27, 2019 </p> 
-                            
-                            ZJOI2019 游记
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E6%9E%84%E9%80%A0/">构造 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/04/22/Solutions/Solution-CF609F/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> April 22, 2019 </p> 
-                            
-                            题解 CF609F Frogs and mosquitoes
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/NTT/">NTT <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/04/18/Other/Problems/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> April 18, 2019 </p> 
-                            
-                            OI Journal
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/">多项式 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/04/14/Solutions/Solution-CF1153E/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> April 14, 2019 </p> 
-                            
-                            题解 CF1153E Serval and Snake
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/">矩阵乘法 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/03/29/Solutions/Solution-CF343D/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> March 29, 2019 </p> 
-                            
-                            题解 CF343D Water Tree
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/">斜率优化 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/03/02/Solutions/Solution-CF1117D/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> March 2, 2019 </p> 
-                            
-                            题解 CF1117D Magic Gems
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E5%88%86%E5%9D%97/">分块 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/02/26/Solutions/Solution-CF452F/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> February 26, 2019 </p> 
-                            
-                            题解 CF452F Permutation
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/DFS%E5%BA%8F/">DFS序. <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/02/21/Solutions/Solution-Luogu2892/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> February 21, 2019 </p> 
-                            
-                            题解P2892 追捕盗贼
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/">随机化 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/02/12/Solutions/Solution-CF1111C/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> February 12, 2019 </p> 
-                            
-                            题解 CF1111C Creative Snap
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86/">树上差分 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/01/28/Solutions/Solution-Luogu5174/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> January 28, 2019 </p> 
-                            
-                            题解 洛谷P5174 圆点
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/DFS%E5%BA%8F/">DFS序 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/01/20/Other/PKUWC2019-Journey/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> January 20, 2019 </p> 
-                            
-                            PKUWC2019游记
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/">二分答案 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/01/16/Notes/fhq-Treap/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> January 16, 2019 </p> 
-                            
-                            fhq Treap与区间操作
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/BFS/">BFS <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/01/10/Solutions/Solution-Luogu4142/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> January 10, 2019 </p> 
-                            
-                            题解 洛谷4142 洞穴遇险
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E5%80%8D%E5%A2%9E/">倍增 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2019/01/10/Notes/Chtholly-Tree/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> January 10, 2019 </p> 
-                            
-                            浅谈珂朵莉树
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">并查集 <span class="count">(1)</span></a>
             
-                    
-                
-                    <div class = "archive_page">
-                        <h2> 2018</h2>
-                    </div>
-
-                    <!-- <hr> -->
-                
-
-                <a href="/2018/12/29/Solutions/Solution-CF1096G/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> December 29, 2018 </p> 
-                            
-                            题解 CF1096G Lucky Tickets
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/DFS/">DFS <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2018/12/28/Solutions/Solution-CF1095D/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> December 28, 2018 </p> 
-                            
-                            题解 CF1095D Circular Dance
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2018/11/21/Solutions/Solution-Luogu5003/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> November 21, 2018 </p> 
-                            
-                            题解 洛谷P5003 跳舞的线-乱拐弯
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/">模拟退火 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2018/11/19/Solutions/Solution-CF1070H/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> November 19, 2018 </p> 
-                            
-                            题解 CF1070H BerOS File Suggestion
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/Tarjan/">Tarjan <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2018/11/18/Solutions/Solution-Luogu3022/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> November 18, 2018 </p> 
-                            
-                            题解 洛谷P3022 [USACO11OPEN]奇数度Odd degrees
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E7%BC%A9%E7%82%B9/">缩点 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2018/11/18/Other/NOIp2018-Journey/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> November 18, 2018 </p> 
-                            
-                            我来了，我出锅了，我走了——NOIp2018游记
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E6%8B%93%E6%89%91/">拓扑 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2018/11/17/Solutions/Solution-CF1077C/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> November 17, 2018 </p> 
-                            
-                            题解 CF1077C Good Array
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟 <span class="count">(1)</span></a>
             
-                    
-                
-
-                <a href="/2018/11/17/Solutions/Solution-CF1068B/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> November 17, 2018 </p> 
-                            
-                            题解 CF1068B LCM
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/10/24/Solutions/Solution-Luogu2547/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> October 24, 2018 </p> 
-                            
-                            题解 洛谷P2547 [AHOI2004]DNA变异
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/10/01/Notes/min-cost-max-flow/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> October 1, 2018 </p> 
-                            
-                            算法学习笔记-最小费用最大流
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/09/27/Notes/dandiao-queue/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> September 27, 2018 </p> 
-                            
-                            算法学习笔记-单调队列
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/09/26/Solutions/Solution-S1ExtraRound/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> September 26, 2018 </p> 
-                            
-                            杭十三中冠军联赛S1 Extra Round 题解
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/08/29/Solutions/Solution-Luogu4819/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> August 29, 2018 </p> 
-                            
-                            题解 洛谷P4819 [中山市选]杀人游戏
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/08/21/Solutions/Solution-CF702E/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> August 21, 2018 </p> 
-                            
-                            题解 CF702E Analysis of Pathes in Functional Graph
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/08/03/Solutions/Solution-Luogu3045/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> August 3, 2018 </p> 
-                            
-                            题解 洛谷P3045 [USACO12FEB]牛券Cow Coupons
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/07/31/Solutions/Solution-Luogu4267/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> July 31, 2018 </p> 
-                            
-                            题解 洛谷P4267 [USACO18FEB]Taming the Herd
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/04/09/Solutions/Solution-Luogu1704/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> April 9, 2018 </p> 
-                            
-                            题解 洛谷P1704 寻找最优美做题曲线
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/03/23/Solutions/Solution-Luogu1396/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> March 23, 2018 </p> 
-                            
-                            题解 洛谷P1396 营救
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
-            
-                    
-                
-
-                <a href="/2018/03/16/Solutions/Solution-Luogu2814/">
-                    <div class = "archive_page">
-                        <h3>
-
-                            <p style = "display:inline"> March 16, 2018 </p> 
-                            
-                            题解 洛谷P2814 家谱
-
-                        </h3>
-                
-
-                    </div>
-                </a>
-
-                <!-- <hr> -->
-                
-                 
-
+                <a href="/tags/%E8%B4%AA%E5%BF%83/">贪心 <span class="count">(1)</span></a>
             
         </div>
+    
+</div>
 
-    </body>
-</html>
 
         <div class = "bottom">
             <br/>
